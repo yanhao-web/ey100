@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	  #d1{float:left;background:url(login_bg_0619.jpg);width:1920px;height:500px;margin-top:131px;}
+		#d2{width:320px;height:390px;padding:15px;margin:36px 500px 20px 1200px;background:#fff;border-radius:5px;}
+	  .a1{float:right;text-decoration:none;color:#0066cc;font-size:8px;}
+		.a1:hover{text-decoration:underline;}
+		#phone,#upwd{padding:20px 45px;width:99%;margin:auto;box-sizing:border-box;
+		             background:url(username_bg.png);background-repeat:no-repeat;background-position:0px 5px;border:1px solid #666;}
+		#upwd{background:url(password_bg.png);background-repeat:no-repeat;background-position:0px 5px;}
+		#d3,#d4{margin:28px 0px 5px 0px;}
+		#d4{margin-top:8px;}
+    #a0{text-decoration:none;color:#666;font-size:8px;float:right;}
+    label{font-size:11px;}
+    button{background:#ff1d1d;width:99%;outline:0;border:0;height:50px;color:#fff;}
+		#a1{float:left;background:url(icon_cooperation.jpg);background-repeat:no-repeat;
+		   background-position:-120px -5px;width:20px;text-decoration:none;}
+		#a2{text-decoration:none;font-size:12px;text-indent:20px;color:#000;}
+		#d7{clear:both;}
+		#d7{margin-top:20px;}
+		#d7 a{float:right;background:url(reglink_icon.png);background-repeat:no-repeat;text-decoration:none;
+		     color:#ff1d1d;font-size:13px;text-indent:22px;}
+		#d7 a:hover{text-decoration:underline;}
+	</style>
+	<script>
+	  function login(){
+		  var $phone=phone.value;
+		  var $upwd=upwd.value;
+			if(!$phone||!$upwd){
+			  p0.innerHTML="请输入Email地址或手机号码";return;
+			} else{
+			  var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+				  if(xhr.readyState==4&&xhr.status==200){
+					  var result=xhr.responseText;
+            if(result=="1"){alert('登录成功');}else if(result=="0"){alert('登录失败');}
+					}
+				};
+				xhr.open('get','/user/v1/login/'+$phone+'/'+$upwd,true);
+				xhr.send();
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">
+	  <table></table>
+	  <div id="d2">
+		  易优百登录账户
+			<a href="" class="a1">注册新用户</a>
+			<p id="p0"></p>
+			<div id="d3"><input type="text" id="phone" placeholder="邮箱/手机/用户ID"></div>
+			<div id="d4"><input type="text" id="upwd" placeholder="密码"></div>
+			<div id="d5">
+			  <input type="checkbox" name="dl" id="nam"><label for="nam">记住用户名</label>	
+			  <input type="checkbox" name="dl" id="auto"><label for="auto">自动登录</label>
+				<a href="" id="a0">忘记密码？</a>
+				<div id="d8">
+				  <button onclick="login()">登录</button>
+			  </div>
+				<p>更多合作网站登录</p>
+				<a href="" id="a1">&nbsp;</a>
+				<a href="" id="a2">新浪微博</a>
+				<div id="d7">您还不是易优百账户？<a href="">立即注册</a></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>  

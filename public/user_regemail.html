@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	  #reg{width:990px;height:550px;border:1px solid #666666;margin:131px auto;}
+		#t1{background:#e6e6e6;border-bottom:1px solid #666666;width:100%;padding:4px 0;}
+		#td0{text-indent:15px;}
+		#td1{text-align:right;font-size:10px;}
+		#td1 a{background:#e2051b;text-decoration:none;color:#fff;padding:2px 5px;}
+    #td1 a:hover{text-decoration:underline;}
+		#d0{margin:30px 40px;border-bottom:1px solid #ed828a;width:910px;}
+    #d0 #a1{float:left;margin-left:140px;background:#666666;}
+	  #d1{clear:both;}
+		#a4,#a5,#d0 a{color:#fff;text-decoration:none;font-size:14px;padding:3px 6px;}
+		#a2{float:left;margin-left:20px;background:#e2051b;}
+		#t2{float:left;font-size:8px;margin:2px 0px 52px 180px;}
+		#d2{float:left;margin-left:15px;}
+		td{padding:8px 1px;}
+		#c{background:#e2051b;color:#fff;padding:2px 5px;}
+		option{background:#fff;color:#000;}
+		.text{width:90px;}
+		#a3{text-decoration:none;color:#000000;}
+		#a6:hover,#a3:hover{text-decoration:underline;}
+		#a4,#a5{background:#e2051b;}
+		#a6{color:#a20000;text-decoration:none;}
+	</style>	
+	<script>
+	  function fkph(){
+		  var $phone=phone.value;
+			if(!$phone){s1.innerHTML="请输入邮箱";}else{s1.innerHTML="请验证邮箱是否可用";}
+		}
+	  function check(){
+		  var $phone=phone.value;
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+			  if(xhr.readyState==4&&xhr.status==200){
+				  var result=xhr.responseText;
+          if(result=="1"){s6.innerHTML="该邮箱已被占用";}else{s6.innerHTML="该邮箱可以注册";}
+				}
+			};
+			xhr.open('get','user/v1/check/'+$phone,true);
+			xhr.send();
+		}
+		function userreg(){
+
+		  var $upwd=upwd.value;
+		  var $cpwd=cpwd.value;
+			
+			if($cpwd===$upwd && s1.innerHTML=="请验证邮箱是否可用" && s6.innerHTML=="该邮箱可以注册"){
+			  var xhr=new XMLHttpRequest();
+			  var $phone=phone.value;
+		    var $c=c.value;
+				console.log($c);
+				xhr.onreadystatechange=function(){
+				  if(xhr.readyState==4&&xhr.status==200){
+					  var result=xhr.responseText;
+            console.log(result);
+						if(result=="1"){alert('注册成功');return;}else if(result=="0"){alert('注册失败');return;}
+					}
+				};
+				xhr.open('post','/user/v1/regphone',true);
+				xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+				var formdata="phone="+$phone+"&upwd="+$upwd+"&city="+$c;
+				xhr.send(formdata);
+			}else{alert('不满足注册条件');return;}
+		} 
+	</script>
+</head>
+<body>
+	<div id="reg">
+	  <table id="t1">
+		  <tr>
+		  	<td id="td0">注册新用户</td>
+		  	<td></td>
+		  	<td id="td1">我已经注册，现在就<a href="user_login.html">登录</a></td>
+		  </tr>
+		</table>
+		<div id="d0">
+		  <a href="user_regphone.html" id="a1">使用手机注册</a>
+		  <a href="" id="a2">使用E-mail注册</a>
+			<div id="d1"></div>
+		</div>
+		
+	  <table id="t2">
+	  	<tr>
+	  		<td class="text">您选择的城市</td>
+	  		<td>
+				  <select name="city" id="c">
+					  <option value="上海"><a href="">上海</a></option>
+					  <option value="北京"><a href="">北京</a></option>
+					  <option value="苏州"><a href="">苏州</a></option>
+					  <option value="广州"><a href="">广州</a></option>
+					  <option value="其他"><a href="">其他</a></option>
+					</select>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text">*E-mail地址：</td>
+	  		<td>
+				  <input type="text" id="phone" maxlength="11" onblur="fkph()">
+	        <span id="s1"></span>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text">*验证码：</td>
+	  		<td>
+				  <input type="text">
+				  <span>1111</span>
+					<a href="" id="a3">看不清，换一张</a>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td></td>
+	  		<td>
+				  <button href="" id="b4" onclick="check()">
+					  验证邮箱是否可用
+					</button>
+				  <span id="s6">
+					
+					</span>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text">*设置登录密码：</td>
+	  		<td><input type="text" id="upwd">
+				  <span id="s3"></span>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text">*再次输入密码：</td>
+	  		<td><input type="text" id="cpwd">
+				  <span id="s4"></span>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text">*邀请码：</td>
+	  		<td><input type="text">
+				  <span id="s5">（非必填项）</span>
+				</td>
+	  	</tr>
+	  	<tr>
+	  		<td class="text" colspan="2">请阅读<a href="" id="a6">《易优百服务条款》</a></td>
+	  	</tr>
+			<tr>
+	  		<td class="text" colspan="2">
+				  <button href="" id="a5" onclick="userreg()">同意以上条款并注册</button>
+				</td>  		
+	  	</tr>
+	  </table>
+    <div id="d2"><img src="reg3000.jpg" alt=""></div> 
+	</div>
+</body>
+</html>
