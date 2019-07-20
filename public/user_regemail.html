@@ -3,8 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="footer.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" href="bootstrap.css"/>
+	<script src="jquery.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
 	<style>
-	  #reg{width:990px;height:550px;border:1px solid #666666;margin:131px auto;}
+		*{margin:0;padding:0;}
+	  #reg{width:990px;height:550px;border:1px solid #666666;margin:40px auto;}
 		#t1{background:#e6e6e6;border-bottom:1px solid #666666;width:100%;padding:4px 0;}
 		#td0{text-indent:15px;}
 		#td1{text-align:right;font-size:10px;}
@@ -17,7 +25,7 @@
 		#a2{float:left;margin-left:20px;background:#e2051b;}
 		#t2{float:left;font-size:8px;margin:2px 0px 52px 180px;}
 		#d2{float:left;margin-left:15px;}
-		td{padding:8px 1px;}
+	    #t2  td{padding:8px 1px;}
 		#c{background:#e2051b;color:#fff;padding:2px 5px;}
 		option{background:#fff;color:#000;}
 		.text{width:90px;}
@@ -69,12 +77,43 @@
 	</script>
 </head>
 <body>
+<div class="container-fluid  px-0">
+    <div id="header">
+	  <div id="headerl">
+		  <span>北京</span>  <span>欢迎来到易优百，请登录！</span><a href="user_login.html">登录</a></span><span>|</span><span><a href="user_regphone.html">注册</a></span>
+		</div>
+    <div id="headerr">
+		    <a id="sp1" href="#ds1">我的易优百</a>    |   	<a id="sp2" href="#ds2">我的消息</a>    |    <a id="sp3" href="#ds3">客户服务 </a>
+        <div id="ds0">
+				<div id="ds1">		
+					<a href="">我的常购商品</a><br>
+					<a href="">我的订单</a><br>
+					<a href="">我的报表</a><br>
+					<a href="">我的积分</a><br>
+					<a href="">我的预定</a><br>
+					<a href="">个人资料</a><br>
+				</div>
+				<div id="ds2">
+			    <a href="">立即登录查看</a>
+				</div>
+				<div id="ds3">
+					<a href="">在线客服</a><br>
+					<a href="">在线退换货</a><br>
+					<a href="">常见问题</a><br>
+					<a href="">联系我们</a><br>
+				</div>
+				</div>
+		</div>
+		</div>			  	
+	<div id="headerb">
+	  <img src="new_logo.png" alt="">
+	</div>
 	<div id="reg">
 	  <table id="t1">
 		  <tr>
 		  	<td id="td0">注册新用户</td>
 		  	<td></td>
-		  	<td id="td1">我已经注册，现在就<a href="user_login.html">登录</a></td>
+		  	<td id="td1">我已经注册，现在就 <a href="user_login.html">登录</a> </td>
 		  </tr>
 		</table>
 		<div id="d0">
@@ -151,5 +190,90 @@
 	  </table>
     <div id="d2"><img src="reg3000.jpg" alt=""></div> 
 	</div>
+	<div id="footerm">
+		<div class="left-img">
+			<img src="ey100_photo.jpg" alt="">
+		</div>
+		<div class="left">
+			<a href="">关于易优百</a>
+			<p>易优百，隶属于百年文具企业国誉集团</p>
+			<p>国誉集团创始于1905年，是日本家喻户晓的文具及办公家具品牌。2005年，国誉集团在成立100周年之际 正式进入中国市场，建立了国誉商业（上海）有限公司，并创立了易优百，以日本式亲切服务以及匠人精神服务于中国...</p>
+		</div>
+		<ul>
+			<li>
+				新手指南
+				<ul>
+					<li><a href="">新用户注册</a></li>
+					<li><a href="">信息变更</a></li>
+					<li><a href="">取消注册</a></li>
+					<li><a href="">注册新用户</a></li>
+					<li><a href="">信息变更</a></li>
+				</ul>
+			</li>
+			<li>常见问题解答
+				<ul>
+					<li><a href="">常见问题</a></li>
+					<li><a href="">开票和转账</a></li>
+					<li><a href="">赠品细则声明</a></li>
+					<li><a href="">合同订立与下载</a></li>
+				</ul>
+			</li>
+			<li>
+				办公用品的订购方式
+				<ul>
+					<li><a href="">商品的订购方式</a></li>
+					<li><a href="">商品的交付、付款与拒收</a></li>
+					<li><a href="">配送和支付方式</a></li>
+					<li><a href="">复印机租赁</a></li>
+					<li><a href="">礼品定制服务</a></li>
+					<li><a href="">弹性福利、员工福利采购</a></li>
+				</ul>
+			</li>
+			<li>退换货
+				<ul>
+					<li><a href="">退换货政策</a></li>
+					<li><a href="">退换货流程</a></li>
+					<li><a href="">不能退换货说明</a></li>
+				</ul>
+			</li>
+			<li>
+				表格下载
+				<ul>
+					<li><a href="">资料变更联系单</a></li>
+					<li><a href="">快捷订购单</a></li>
+					<li><a href="">办公家具专用订购单</a></li>
+					<li><a href="">发票资料管理表下载</a></li>
+					<li><a href="">客户心声</a></li>
+					<li><a href="">印章订购单</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="footerb">
+		<p id="tb-1">
+			<a href="">个人情报保护方针</a>|
+			<a href="">免责条款</a>|
+			<a href="">易优百使用条款</a>|
+			<a href="">联系我们</a>|
+			<a href="">人才招募</a>
+		</p>
+		<p id="tb-2">
+			©2019国誉商业（上海）有限公司 All rights reserved
+		</p>
+		<div id="tb-d1">
+			<span id="d1-s1"></span>
+			<span id="d1-s2"></span>
+			<span id="d1-s3"></span>
+			<a href="" id="d1-a1"></a>
+			<a href="" id="d1-a2"></a>
+			<a href="" id="d1-a3"></a>
+		</div>
+		<div id="tb-d2" class="row mx-0 ">
+			<span class="text-center bg-white col-2 offset-5 h-75 w-25  px-0 mt-1  ">友情链接&nbsp;&nbsp;<a href="">Kaunet</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">国誉KOKUYO</a>
+			</span>
+		</div>
+	</div>
+</div>
+</div>
 </body>
 </html>

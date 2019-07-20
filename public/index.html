@@ -3,9 +3,385 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="footer.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<title></title>
+	<link rel="stylesheet" href="bootstrap.css"/>
+	<script src="jquery.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		.db{right:0px;bottom:0px;}
+		.wx{right:0px;bottom:320px;}
+		.ad{right:0px;top:0px;}
+		#btn{right:-87px;top:250px;}
+		#btn>a:hover{transform:translate(-86px);}
+		#btn>a{transition:all 1s;}
+		.fw img{border-right:10px solid white;}
+		.xp>div>div>img{width:154px;height:154px;}
+		.xp>div>div{width:235px;height:200px;}
+		.xp>div>div img{width:154px;height:148px;padding-left:30px;transition:2s;}
+		.xp>div>div img:hover{transform:translate(20px);}
+		.xp span{font-size:1px;color:#595757;margin-left:15px;}
+		.xp a{text-decoration: none;}
+		p.xp,p.lj,p.jf{border-left:8px solid red;margin-left:352px;margin-top:20px;}
+		span:not(:first-child ){color:red;}
+		p.lj{border-color:#8fc31f;}
+		p.jf{border-color:#f3981c;}
+		#footer{margin-top:-500px;}
+	</style>
+	<link rel="stylesheet" href="footer.css">
 </head>
 <body>
-	<a href="user_regphone.html">注册</a>
-	<a href="user_login.html">登录</a>
+<!--头部-->
+  <div class="container-fluid px-0 ">
+	  <div id="header-all"  class="">
+	  <div id="header">
+	  <div id="headerl">
+		  <span>北京</span>  <span>欢迎来到易优百，请登录！</span><a href="user_login.html">登录</a></span><span>|</span><span><a href="user_regphone.html">注册</a></span>
+		</div>
+    <div id="headerr">
+		    <a id="sp1" href="#ds1">我的易优百</a>    |   	<a id="sp2" href="#ds2">我的消息</a>    |    <a id="sp3" href="#ds3">客户服务 </a>
+        <div id="ds0">
+				<div id="ds1">		
+					<a href="">我的常购商品</a><br>
+					<a href="">我的订单</a><br>
+					<a href="">我的报表</a><br>
+					<a href="">我的积分</a><br>
+					<a href="">我的预定</a><br>
+					<a href="">个人资料</a><br>
+				</div>
+				<div id="ds2">
+			    <a href="">立即登录查看</a>
+				</div>
+				<div id="ds3">
+					<a href="">在线客服</a><br>
+					<a href="">在线退换货</a><br>
+					<a href="">常见问题</a><br>
+					<a href="">联系我们</a><br>
+				</div>
+				</div>
+		</div>
+		</div>			  	
+	<div id="headerb">
+	  <img src="new_logo.png" alt="">
+	</div>
+	  </div>
+<!--加入固定定位-->
+	  <div class="position-fixed ad">
+		  <img src="top_right_ad_1.png" alt=""/>
+	  </div>
+	  <div id="btn"class="btn-group btn-group-vertical position-fixed  ">
+		  <a href="" class="border border-bottom-white   "><img src="right_navi_1_login.png" alt=""/></a>
+		  <a href="" class="border border-bottom-white  "><img src="right_navi_2_cart.png" alt=""/></a>
+		  <a href="" class="border border-bottom-white  "><img src="right_navi_3_newscame.png" alt=""/></a>
+		  <a href="" class="border border-bottom-white  "><img src="right_navi_4_points.png" alt=""/></a>
+		  <a href="" class="border border-bottom-white  "><img src="right_navi_5_callcenter.png" alt=""/></a>
+	  </div>
+	  <div class="wx position-fixed ">
+		  <img src="right_wechat_qrcode.jpg" alt=""/>
+	  </div>
+      <div class="db position-fixed ">
+		  <a href="index.html"><img src="gototop.png" alt=""/></a>
+	  </div>
+	  <!-- 服务的五幅图-->
+	  <div class="d-flex justify-content-center fw   mt-5 ">
+		  <a href=""><img src="guide_1012.jpg" alt=""/></a>
+		  <a href=""><img src="guide_0621.jpg" alt=""/></a>
+		  <a href=""><img src="guide_02.jpg" alt=""/></a>
+		  <a href=""><img src="guide_180530.jpg" alt=""/></a>
+		  <a href=""><img src="guide_0622.jpg" alt=""/></a>
+	  </div>
+	  <!-- 新品推荐-->
+
+	  <p class="xp">新品推荐</p>
+	  <div class="xp d-flex justify-content-center ">
+		  <div class=" border ">
+			  <a href="">
+			  <img src="floor_big_picture_0628.jpg" alt=""/></a>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="国誉 Campus紧凑型超薄mini活页本 (黑) A7变形/20页 5mm方格  WSG-MER520D">
+				  <a href="">			  <span>国誉 Campus紧凑型超薄mini活...</span><br/>
+					  <span>￥9.90</span><br/>
+					  <img src="8031-3552.jpg" alt=""/></a>
+			  </div>
+
+			  <div class="border border-right-0" title="时代良品 多功能简易桌面收纳盒 (彩色) 四格  SD-2510">
+				  <a href="">			  <span>时代良品 多功能简易桌面收纳...</span><br/>
+					  <span>¥ 68.00</span><br/>
+				  <img src="2022-3841.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="国产 增值税发票专用信封 (牛皮色) 250*160mm 50枚/包">
+				  <a href="">			  <span>国产 增值税发票专用信封 (牛皮色...</span><br/>
+					  <span>¥ 22.50</span><br/>
+				  <img src="7001-9120.JPG" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="富士通 高速馈纸扫描仪  IX1500">
+				  <a href="">			  <span>富士通 高速馈纸扫描仪  IX1500...</span><br/>
+					  <span>￥2900.00</span><br/>
+				  <img src="2022-3632.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="国誉 Campus紧凑型超薄mini活页本 (黑) A7变形/20页 5mm方格  WSG-MER520D">
+				  <a href="">			  <span>国誉 飞特飒飒笔款剪刀 (黑色) 刃...</span><br/>
+					  <span>￥19.90</span><br/>
+				  <img src="8031-2969.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="爱普生 投影机 3500流明XGA  CB-X39">
+				  <a href="">			  <span>爱普生 投影机 3500流明XGA  CB...</span><br/>
+					  <span>￥4900.00</span><br/>
+				  <img src="2022-3951.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div  class="border border-right-0" title="国誉 NOVITA-Oli笔袋 (蓝黄) 中号  WSG-PC121-3">
+				  <a href="">			  <span>国誉 NOVITA-Oli笔袋 (蓝黄) 中...</span><br/>
+					  <span>￥27.80</span><br/>
+				  <img src="8031-2925.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="全能 钢将军系列保险箱 61kg  FG-5840B/R">
+				  <a href="">			  <span>全能 钢将军系列保险箱 61kg  FG...</span><br/>
+					  <span>￥2636.00</span><br/>
+				  <img src="1009-1619.jpg" alt=""/></a>
+			  </div>
+		  </div>
+	  </div>
+
+
+	  <!-- 垃圾分类-->
+
+	  <p class="lj">垃圾分类</p>
+	  <div class="xp d-flex justify-content-center ">
+		  <div class=" border ">
+			  <a href="">
+				  <img src="floor_big_picture_0615.jpg" alt=""/></a>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="敏胤 户外分类干垃圾标识垃圾桶(带轮) (黑色) 120L  MYL-7120">
+				  <a href="">			  <span>敏胤 户外分类干垃圾标识垃圾桶(...</span><br/>
+					  <span>￥338.00</span><br/>
+					  <img src="2022-2840.jpg" alt=""/></a>
+			  </div>
+
+			  <div class="border border-right-0" title="敏胤 可降解分类垃圾袋 (黑色) 70*90cm 20个/卷  干垃圾袋">
+				  <a href="">			  <span>敏胤 可降解分类垃圾袋 (黑色) 70...</span><br/>
+					  <span>¥ 23.30</span><br/>
+					  <img src="8030-9482.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="敏胤 户外分类湿垃圾标识垃圾桶(带轮) (咖啡色) 120L  MYL-7120">
+				  <a href="">			  <span>敏胤 户外分类湿垃圾标识垃圾桶(...</span><br/>
+					  <span>¥ 338.00</span><br/>
+					  <img src="2022-2851.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="敏胤 可降解分类垃圾袋 (咖啡色) 70*90cm 20个/卷  湿垃圾袋">
+				  <a href="">			  <span>敏胤 可降解分类垃圾袋 (咖啡色) 70...</span><br/>
+					  <span>￥23.35</span><br/>
+					  <img src="8030-9493.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="敏胤 加厚户外分类可回收物标识垃圾桶(挂车带轮) (蓝色) 240L  MYL-7240">
+				  <a href="">			  <span>敏胤 加厚户外分类可回收物标识...</span><br/>
+					  <span>￥488.00</span><br/>
+					  <img src="2022-2906.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="敏胤 可降解分类垃圾袋 (黑色) 90*100cm 20个/卷  干垃圾袋  ">
+				  <a href="">			  <span>敏胤 可降解分类垃圾袋 (黑色) 90...</span><br/>
+					  <span>￥33.00</span><br/>
+					  <img src="8030-9504.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div  class="border border-right-0" title=" 敏胤 加厚户外分类有害垃圾标识垃圾桶(挂车带轮) (红色) 240L  MYL-7240">
+				  <a href="">			  <span>敏胤 加厚户外分类有害垃圾标识垃...</span><br/>
+					  <span>￥488.00</span><br/>
+					  <img src="2022-2917.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="敏胤 可降解分类垃圾袋 (咖啡色) 90*100cm 20个/卷  湿垃圾袋">
+				  <a href="">			  <span>敏胤 可降解分类垃圾袋 (咖啡色)...</span><br/>
+					  <span>￥33.00</span><br/>
+					  <img src="8030-9515.jpg" alt=""/></a>
+			  </div>
+		  </div>
+	  </div>
+
+
+	  <!-- 积分商城-->
+
+	  <p class="jf">积分商城</p>
+	  <div class="xp d-flex justify-content-center ">
+		  <div class=" border ">
+			  <a href="">
+				  <img src="floor_big_picture_0614.jpg" alt=""/></a>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="风格派 口袋水果风扇 (西柚橙)  A208H">
+				  <a href="">			  <span>风格派 口袋水果风扇 (西柚橙)  A2...</span><br/>
+					  <span>58积分</span><br/>
+					  <img src="DH17-7591.png" alt=""/></a>
+			  </div>
+
+			  <div class="border border-right-0" title="酷扣 保鲜盒两件套装  STZ-801A2">
+				  <a href="">			  <span>酷扣 保鲜盒两件套装  STZ-801A2...</span><br/>
+					  <span>52积分</span><br/>
+					  <img src="DH17-6568.png" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="风格派 香薰唱机（USB线版） (白) 长方形  A305-L">
+				  <a href="">			  <span>风格派 香薰唱机（USB线版） (白) ...</span><br/>
+					  <span>79积分</span><br/>
+					  <img src="DH17-7525.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="coconeco 手工萌猫足型玻璃杯 230ml">
+				  <a href="">			  <span>coconeco 手工萌猫足型玻璃杯 2...</span><br/>
+					  <span>117积分</span><br/>
+					  <img src="DH17-6975.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div class="border border-right-0" title="风格派 森林派对夜灯驱蚊器 夜莺鸟  A306S">
+				  <a href="">			  <span>风格派 森林派对夜灯驱蚊器 夜莺...</span><br/>
+					  <span>61积分</span><br/>
+					  <img src="DH17-7437.jpg" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="EL DORADO 手工镶金sake日本酒杯礼盒 125ml">
+				  <a href="">			  <span>EL DORADO 手工镶金sake日本...</span><br/>
+					  <span>543积分</span><br/>
+					  <img src="DH17-6920.jpg" alt=""/></a>
+			  </div>
+		  </div>
+		  <div class="  ">
+			  <div  class="border border-right-0" title="风格派 手持口红补水仪 (红)  A401B">
+				  <a href="">			  <span>风格派 手持口红补水仪 (红)  A401B...</span><br/>
+					  <span>79积分</span><br/>
+					  <img src="DH17-7734.png" alt=""/></a>
+			  </div>
+			  <div class="border border-right-0" title="东丽 家用净水器直饮水龙头净水机  MK2-EG">
+				  <a href="">			  <span>东丽 家用净水器直饮水龙头净水...</span><br/>
+					  <span>198积分</span><br/>
+					  <img src="DH17-7415.jpg" alt=""/></a>
+			  </div>
+		  </div>
+	  </div>
+	  <!-- 脚部-->
+	  <div id="footer" >
+		  <div id="footert">
+			  <ul>
+				  <li>
+					  <a href="" id="ta1"></a>
+					  <a href="" >邮箱注册 快捷方便</a><br>
+					  <span>输入邮箱+验证码+设定密码=完成注册<br>易优百邮箱:mail@ey100.com</span>
+				  </li>
+				  <li>
+					  <a href=""  id="ta2"></a>
+					  <a href="" >手机注册 一步搞定</a><br>
+					  <span>输入手机号-输入验证码-获取手机<br>验证码-设定密码-完成注册</span>
+				  </li>
+				  <li>
+					  <a href=""  id="ta3"></a>
+					  <a href="">易优百客服热线</a><br>
+					  <span>办公用品订购热线：400-820-0798</span>
+				  </li>
+				  <li>
+					  <a href=""  id="ta4"></a>
+					  <a href="">在线客服</a><br>
+					  <span>工作日时间：<br>9:00至18:00</span>
+				  </li>
+			  </ul>
+		  </div>
+		  <div id="footerm">
+			  <div class="left-img">
+				  <img src="ey100_photo.jpg" alt="">
+			  </div>
+			  <div class="left">
+				  <a href="">关于易优百</a>
+				  <p>易优百，隶属于百年文具企业国誉集团</p>
+				  <p>国誉集团创始于1905年，是日本家喻户晓的文具及办公家具品牌。2005年，国誉集团在成立100周年之际 正式进入中国市场，建立了国誉商业（上海）有限公司，并创立了易优百，以日本式亲切服务以及匠人精神服务于中国...</p>
+			  </div>
+			  <ul>
+				  <li>
+					  新手指南
+					  <ul>
+						  <li><a href="">新用户注册</a></li>
+						  <li><a href="">信息变更</a></li>
+						  <li><a href="">取消注册</a></li>
+						  <li><a href="">注册新用户</a></li>
+						  <li><a href="">信息变更</a></li>
+					  </ul>
+				  </li>
+				  <li>常见问题解答
+					  <ul>
+						  <li><a href="">常见问题</a></li>
+						  <li><a href="">开票和转账</a></li>
+						  <li><a href="">赠品细则声明</a></li>
+						  <li><a href="">合同订立与下载</a></li>
+					  </ul>
+				  </li>
+				  <li>
+					  办公用品的订购方式
+					  <ul>
+						  <li><a href="">商品的订购方式</a></li>
+						  <li><a href="">商品的交付、付款与拒收</a></li>
+						  <li><a href="">配送和支付方式</a></li>
+						  <li><a href="">复印机租赁</a></li>
+						  <li><a href="">礼品定制服务</a></li>
+						  <li><a href="">弹性福利、员工福利采购</a></li>
+					  </ul>
+				  </li>
+				  <li>退换货
+					  <ul>
+						  <li><a href="">退换货政策</a></li>
+						  <li><a href="">退换货流程</a></li>
+						  <li><a href="">不能退换货说明</a></li>
+					  </ul>
+				  </li>
+				  <li>
+					  表格下载
+					  <ul>
+						  <li><a href="">资料变更联系单</a></li>
+						  <li><a href="">快捷订购单</a></li>
+						  <li><a href="">办公家具专用订购单</a></li>
+						  <li><a href="">发票资料管理表下载</a></li>
+						  <li><a href="">客户心声</a></li>
+						  <li><a href="">印章订购单</a></li>
+					  </ul>
+				  </li>
+			  </ul>
+		  </div>
+		  <div id="footerb">
+			  <p id="tb-1">
+				  <a href="">个人情报保护方针</a>|
+				  <a href="">免责条款</a>|
+				  <a href="">易优百使用条款</a>|
+				  <a href="">联系我们</a>|
+				  <a href="">人才招募</a>
+			  </p>
+			  <p id="tb-2">
+				  ©2019国誉商业（上海）有限公司 All rights reserved
+			  </p>
+			  <div id="tb-d1">
+				  <span id="d1-s1"></span>
+				  <span id="d1-s2"></span>
+				  <span id="d1-s3"></span>
+				  <a href="" id="d1-a1"></a>
+				  <a href="" id="d1-a2"></a>
+				  <a href="" id="d1-a3"></a>
+			  </div>
+			  <div id="tb-d2" class="row mx-0 ">
+			<span class="text-center bg-white col-2 offset-5 h-75 w-25  px-0 mt-1  ">友情链接&nbsp;&nbsp;<a href="">Kaunet</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">国誉KOKUYO</a>
+			</span>
+			  </div>
+		  </div>
+	  </div>
+  </div>
 </body>
 </html>
