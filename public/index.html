@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="header.css">
-	<link rel="stylesheet" href="footer.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-	<title></title>
+	<title>易优百首页</title>
 	<link rel="stylesheet" href="bootstrap.css"/>
 	<script src="jquery.min.js"></script>
 	<script src="popper.min.js"></script>
@@ -20,6 +17,7 @@
 		#btn>a:hover{transform:translate(-86px);}
 		#btn>a{transition:all 1s;}
 		.fw img{border-right:10px solid white;}
+		.xp div{background:#fff;}
 		.xp>div>div>img{width:154px;height:154px;}
 		.xp>div>div{width:235px;height:200px;}
 		.xp>div>div img{width:154px;height:148px;padding-left:30px;transition:2s;}
@@ -30,49 +28,228 @@
 		span:not(:first-child ){color:red;}
 		p.lj{border-color:#8fc31f;}
 		p.jf{border-color:#f3981c;}
-		#footer{margin-top:-500px;}
+		.ad2{top:-300px;right:30px;}
+		.ad{z-index:99999999 !important;}
+		.ad:hover{transition:0.01s;transform:translateY(300px);z-index:9999999;}
+		.ad1:hover{transition:0.01s;transform:translateY(-300px) !important;}
+		.na-bo.na-bo2{top:10px;font-size:20px;left:400px !important;}
+		.carousel-item.active img{height:456px;width:100%;}
+		.li-left{
+			margin-left:-119px;
+			margin-right:100px;
+			background:#e2051b;
+		}
+		
+		/* 商品分类左边的三道红色横线 */
+		.heng{		
+			position:absolute;
+			top:220px;left:320px;	
+			background:url(index_icon.png) no-repeat;
+			background-position:0px -457px;
+			background-size:700%;
+			width:50px;
+			height:50px;
+		}
+		.li-left a{
+			color:#fff !important;
+			padding:10px 100px;
+			background-position:0px 0px;
+		}
+		.white-size a{font-size:16px;}
+		/* 轮播图右侧的定制服务和易动态 */
+		.tfw{width:244px;position:absolute;top:270px;right:295px;background:#fff;z-index:9999;font-size:11px;padding:0;table-layout: fixed;}
+		.tfw tr+tr{border-top:1px solid #f2f2f2;} 
+		.tfw a{color:#898989;text-decoration:none;}
+		.tfw .tr11 span{background:url(index_icon.png) no-repeat;width:50px;height:30px;display:inline-block;background-position:-240px -240px;padding:0px;}
+		.tfw .tr11 span:hover{background-position:-290px -240px;padding:0px;transform:translatex(20px);}
+		.tfw .tr12{padding:0;position:relative;left:30px;}
+		.tfw .tr22{padding:0;position:relative;left:30px;text-indent:10px;}
+		.tr13{position:relative;right:-40px;}
+		.tr23 img{position:relative;right:-40px;top:-1px;border-top:1px solid #f2f2f2 !important;}
+		.tfw .tr2{padding:0;height:30px;}
+		.tfw .tr21 span{background:url(index_icon.png) no-repeat;width:50px;height:30px;display:inline-block;background-position:-240px -400px;padding-top:-20px;}
+		.tfw .tr21 span:hover{background-position:-290px -400px;padding:0px;transform:translatex(20px);}
+		.tr31{background:url(index_icon.png);width:50px;height:30px;background-position:81px 0px;margin-top:20px;text-align:center;position:relative;right:8px;}
+		.tr31:hover{transform:translatex(20px);background:url(index_icon.png);width:32px;height:30px;background-position:32px 0px;margin-top:20px;text-align:center;position:relative;right:8px;}
+		.tr3 p{text-indent:0px;text-align:center;}
+		.tr32{background-position:81px -30px;}
+		.tr32:hover{background-position:32px -30px;}
+		.tr33{background-position:81px -60px;}
+		.tr33:hover{background-position:32px -60px;}
+		.tr34{background-position:81px -90px;}
+		.tr34:hover{background-position:32px -90px;}
+		.tr41{background-position:81px -120px;}
+		.tr41:hover{background-position:32px -120px;}
+		.tr42{background-position:81px -150px;}
+		.tr42:hover{background-position:32px -150px;}
+		.tr43{background-position:81px -180px;}
+		.tr43:hover{background-position:32px -180px;}
+		.tr44{background-position:81px -430px;}
+		.tr44:hover{background-position:32px -430px;}
+		.tr3 td+td{border-left:1px solid #f2f2f2;}
+		.tfw a:hover{color:#e2051b;}
+		/* 易动态 */
+		.ydt{position:absolute;top:575px;color:#898989;background:#fff;right:295px;z-index:9999;width:244px;font-size:3px;}
+		.ydt span{float:right;}
+		.ydt h6{padding:10px;padding-bottom:1px;font-size:10px;}
+		.ydt a{color:#898989;text-decoration:none;}
+		.ydt a:hover{color:#e2051b;}
+		.ydt div{border-bottom:1px dotted #d5d5d5;padding:4px 10px;}
+		/* 轮播图上的a标签 */
+		.bg-white{display:flex;flex-direction:row;flex-wrap:wrap;z-index:1;width:1050px;height:117px;position:absolute;left:277px;left:2000px;top:-139px;transform:translate(-1724px,200px);}
+		.d-mulu{display:flex;flex-direction:column;}
+		.bg-white a{color:#898989 !important;}
+		
+		/* 轮播图上点击效果的隐藏和显示 */
+		
+		.dx{position:absolute;top:232.2px;left:281px;list-style:none;z-index:100000000;background:#e2051b;width:277px !important;}
+		.dx>li>div:first-child>a{display:block;width:277px !important;height:50.6px;color:#fff !important;background-image:url(index_icon.png) no-repeat;text-decoration:none;text-indent:30px;line-height:50.5px;}
+		.dx>li>div:first-child+div{border-top:0.1px solid #edeeee;}
+		.dx>li>div:first-child:hover{background:#fff;}
+		.dx>li:hover .d-dz{display:block;}
+		.dx>li>div:first-child>a:hover{color:#e2051b !important;}
+		.r-img{position:absolute;right:10px;top:-1px;display:flex;flex-direction: column;}
+		.r-img a:before{content:"" !important;}
+		.d-dz.bg-white{margin-top:-62px;height:457px;z-index:999999;display:none;}
+		.bg-white .column{list-style:none;}
+		.d-dz{display:flex;flex-direction:row !important;}
+		.d-dz a~a:before{content:" | ";}
+		.d-dz a~a{font-size:5px;}
+		.d-dz a~a:hover{text-decoration: none;color:#e2051b !important;}
+		.d-dz ul a:first-child{text-decoration: none;margin-left: 20px;margin-right:50px;color:#595757 !important;font-size:15px;}
+		.d-dz li{padding-top:10px !important;}
+		._gti{display:inline-block;background-image:url(index_icon.png);width:10px;height:20px;background-position: 0px -120px;background-size:2000%; position:relative;top:10px;}
+		._gt{display:inline-block;width:100px !important;}
+		.w_left{display:inline-block;width:184px;}
+
+		
+		
+		
+		/* 头部css */
+		#header{display:flex;justify-content:space-around;height:37.5px;}
+		#header a{text-decoration:none;color:#666;}
+		#headerl{font-size:6px;color:#666;display:flex;justify-content:space-around;}
+		#headerl span{padding:0 30px;}
+		#headerl{margin-left:-13%;}
+		#headerl span:last-child{padding:0 5px;}
+		#headerr{font-size:12px;color:#666;}
+		.ds1{position:relative;list-style:none;text-align:left;border:2px solid #e2051b;width:120px;padding:0px 10px 20px 10px;}
+		.ds1{margin-top:-3000px;margin-left:50px;transition:1s;}
+		.dt1:hover{transform:translate(-70px,2970px) !important;z-index: 60000 !important;opacity:1 !important;background:#fff !important;}
+		.dt1+.dt1{margin-left:10px !important;}
+		.ds1 li:first-child span{background:#e2051b;padding:15px 14px;width:121%;display:flex;margin-left:-10px;color:#f8f8f8;line-height:10px;}
+		.ds1 a:hover{color:#e2051b !important;}
+		#ds0{display:flex;}
+		#header{padding:10px 0;background:#fff;position:relative;z-index:999999;}
+		.dt1{margin-left:40px;width:100px;}
+		#headerb,.container-fluid{background:#f8f8f8;}
+		#headerb img{margin-left:12%;}
+		#headerb{border:0;}
+		.bo-red,.na-bo{font-size:4px;}
+		.bo-red{border:2px solid red;outline:0;width:30rem;margin-left:70px;padding:7px 3px;}
+		.bo-red:hover{border:2px solid red;outline:0;}
+		.sousuo{background:#e2051b;color:#fff;padding:7.5px 25px;position:relative;top:1px;right:2px;}
+		.sousuo:hover{color:#fff;text-decoration:none;}
+		.na-bo a{color:#595757;}
+		.na-bo a:hover{color:#e2051b;}
+		.co-red a{color:#e2051b;}
+		.na-bo{position:relative;top:-25px;left:520px;}
+		.gwc{margin-left:200px;background:url(index_icon.png) no-repeat;width:50px;height:40px;background-size: 650%;background-position:0px 0px;border:0;}
+		a.gwa{background:#f8f8f8;border: 1px solid #edeeee;padding:5px 20px;height:30px;position:relative;top:5px;left:-5px;font-size:14px;color:#898989;height:37px;text-decoration:none;margin-left:1px;}
+		#gw{margin-top:-90px;margin-left:1200px;display:flex;position:absolute;z-index:5;}
+		.gwc:hover{cursor:pointer;}
+		.you{background:url(index_icon.png) no-repeat;width:40px;height:20px;margin-left:-10px;background-position: 10px -237px;border:0;background-size:1000%;}
+		.count{background:url(index_icon.png) no-repeat;width:50px;height:30px;background-size:500%;background-position:0px -105px;border:0;position:relative;top:-20px;right:50px;text-indent:3px;color:#fff;}
+		#small-img{margin-top:-38px !important;margin-left:1400px;}
+		.position-fixed{z-index:100;}
+		.djlt{float:right;position:relative;top:-17px;left:17px;background:url(index_icon.png) no-repeat;background-position:-2px -275px;background-size:700%;width:50px;height:30px;}
+		.djlt.lt1{top:1px;}
+		.djlt.lt2{top:1px;}
+		.djlt0{display:inline-block;transform:translate(70px,-35px);background:url(index_icon.png) no-repeat;background-position:-2px -300px;background-size:700%;width:50px;height:30px;}
+        .dt1 li+li{transform:translateY(-35px);}
 	</style>
-	<link rel="stylesheet" href="footer.css">
 </head>
 <body>
 <!--头部-->
-  <div class="container-fluid px-0 ">
-	  <div id="header-all"  class="">
-	  <div id="header">
+
+  <div class="container-fluid  px-0">
+	<div id="header">
 	  <div id="headerl">
-		  <span>北京</span>  <span>欢迎来到易优百，请登录！</span><a href="user_login.html">登录</a></span><span>|</span><span><a href="user_regphone.html">注册</a></span>
-		</div>
-    <div id="headerr">
-		    <a id="sp1" href="#ds1">我的易优百</a>    |   	<a id="sp2" href="#ds2">我的消息</a>    |    <a id="sp3" href="#ds3">客户服务 </a>
-        <div id="ds0">
-				<div id="ds1">		
-					<a href="">我的常购商品</a><br>
-					<a href="">我的订单</a><br>
-					<a href="">我的报表</a><br>
-					<a href="">我的积分</a><br>
-					<a href="">我的预定</a><br>
-					<a href="">个人资料</a><br>
-				</div>
-				<div id="ds2">
-			    <a href="">立即登录查看</a>
-				</div>
-				<div id="ds3">
-					<a href="">在线客服</a><br>
-					<a href="">在线退换货</a><br>
-					<a href="">常见问题</a><br>
-					<a href="">联系我们</a><br>
-				</div>
-				</div>
-		</div>
-		</div>			  	
+		<span>北京</span>  <span>欢迎来到易优百，请登录！</span><a href="user_login.html">登录</a></span><span>|</span><span><a href="user_regphone.html">注册</a></span>
+	  </div>
+	  <div id="headerr">  
+			<div id="ds0">
+			  <div class="dt1">
+				<div id="d-dw"><span id="sp1">我的易优百</span> <div class="djlt"></div></div>	 
+			  <ul class="ds1">
+				<li class=""><span>我的易优百</span> <div class="djlt0"></div></li>
+				<li class=""> <a href="">我的常购商品</a></li>
+				<li class=""><a href="">我的订单</a></li>
+				<li class=""><a href="">我的报表</a></li>
+				<li class=""><a href="">我的积分</a></li>
+				<li class=""><a href="">我的预定</a></li>
+				<li class=""><a href="">个人资料</a></li>
+			  </ul>
+			</div>
+	  
+			<span>|</span>
+			<div class="dt1">
+				<span id="sp2">我的消息</span>  <div class="djlt lt1"></div> 
+			  <ul class="ds1">
+				  <li class=""><span>我的消息</span> <div class="djlt0"></div></li>
+				  <li class=""><a href="">立即登录查看</a></li>
+			  </ul>
+			</div>
+			<span>|</span> 
+			<div class="dt1">
+				<span id="sp3">客户服务 </span><div class="djlt lt2"></div> 
+			  <ul class="ds1">
+				  <li class=""><span>客户服务</span> <div class="djlt0"></div></li>
+				  <li class=""><a href="">在线客服</a></li>
+					<li class=""><a href="">在线退换货</a></li>
+					  <li class=""><a href="">常见问题</a></li>
+						<li class=""><a href="">联系我们</a>
+			  </ul>
+			</div>
+			</div>
+		  </div>
+	</div>
 	<div id="headerb">
 	  <img src="new_logo.png" alt="">
+	  <input type="text" placeholder="办公采购好帮手，想要啥就搜啥" class="bo-red"><a href="" class="sousuo">搜索</a>
+	  <ul class="nav na-bo">
+		  <li class="nav-item"><a href="" class="nav-link">复印纸</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">耗材</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">复印机租赁</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">中性笔</a></li>
+		  <li class="nav-item co-red">
+			  <a href="" class="nav-link">体验套餐</a>
+		  </li>
+	  </ul>
 	</div>
+	<div id="gw">
+		<button class="gwc"></button>
+		<a href="" class="gwa">我的购物车
+			<button class="you"></button>
+		</a>
+		<input class="count" value="0"></input>
 	  </div>
+
+	  <!-- 加入购物车效果 -->
+
+
+
+
+			<img id="small-img" src="http://www.ey100.com/img/small_menu_ad_sh.jpg" alt="">
 <!--加入固定定位-->
 	  <div class="position-fixed ad">
+		 <div class="ad1">  
 		  <img src="top_right_ad_1.png" alt=""/>
-	  </div>
+	    </div>
+	     <div class="position-fixed ad2">
+				<img src="top_right_ad_2.png" alt=""/>
+	     </div>
+	   </div>
 	  <div id="btn"class="btn-group btn-group-vertical position-fixed  ">
 		  <a href="" class="border border-bottom-white   "><img src="right_navi_1_login.png" alt=""/></a>
 		  <a href="" class="border border-bottom-white  "><img src="right_navi_2_cart.png" alt=""/></a>
@@ -86,6 +263,605 @@
       <div class="db position-fixed ">
 		  <a href="index.html"><img src="gototop.png" alt=""/></a>
 	  </div>
+
+
+	  <!-- 轮播图 -->
+	  <ul class="nav na-bo na-bo2 white-size">
+			<li class="nav-item li-left"><a href="" class="nav-link"> 商 品 分 类</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">首页</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">积分商城</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">办公服务</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">弹性福利</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">买赠专区</a></li>
+		  <li class="nav-item"><a href="" class="nav-link">中秋特辑</a></li>
+	  </ul>
+	  <div class="heng"></div>
+
+
+	  <!-- 轮播图上的点击a标签 -->
+
+
+   
+	  <ul class="dx">
+			<li class="">
+					<div><a href="" class="">办公文具</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt">文件夹类
+										</a>		
+									<div class="_gti"></div>
+									<a href="" class="">档案夹</a>
+									<a href="" class="">开管文件夹</a>
+									<a href="" class="">环状文件夹</a>
+									<a href="">强力夹/轻便夹</a>
+									<a href="">资料册/相册</a>
+									<a href="">文件袋/档案袋</a>
+									<a href="">装订/整理夹</a>
+									<a href="">抽杆夹/拉杆夹</a>
+									<br><span class="w_left"></span>
+									<a href="">文件保护套</a>
+									<a href="">名片册/名片盒</a>
+									<a href="">文件盒/档案盒</a>
+									<a href="">吊挂快捞及相关</a>
+									<a href="">装订夹条</a>
+									<a href="">板夹</a>
+									<a href="">分类索引页</a>
+									<a href="">文件包/风琴包</a>
+								</li>
+								<li>	
+								   <a href="" class="_gt _gt1">	本册纸制用品</a>
+								   <div class="_gti"></div>
+								   <a href="">便条纸</a>
+								   <a href="">指示标签</a>
+								   <a href="">便条/拍纸本</a>
+								   <a href="">胶装本</a>
+								   <a href="">线圈本</a>
+								   <a href="">绘画本</a>
+								   <a href="">商务笔记本</a>
+								   <a href="">信封/信纸</a>
+								   <a href="">手写标签</a>
+								   <a href="">贺卡/礼金袋</a>
+								   <br><span class="w_left"></span>
+								   <a href="">证书/签约本/签到本</a>
+								</li>
+								<li>	
+									<a href="" class="_gt _gt1">财务印章用品</a>
+									<div class="_gti"></div>
+									<a href="">财务账簿</a>
+									<a href="">财务凭证</a>
+									<a href="">财务单据</a>
+									<a href="">橡皮筋</a>
+									<a href="">办公通用章</a>
+									<a href="">印台/印泥/印油</a>
+									<a href="">定制印章系列</a>
+									<a href="">手提金库/印章收纳</a>
+									<br><span class="w_left"></span>
+									<a href="">财务相关配件</a>
+								</li>
+								<li>	
+									<a href="" class="_gt _gt1">笔记具</a>
+									<div class="_gti"></div>
+									<a href="">中性笔</a>
+									<a href="">圆珠笔</a>
+									<a href="">水性笔</a>
+									<a href="">多色复合笔</a>
+									<a href="">毛笔/签到笔</a>
+									<a href="">笔芯</a>
+									<a href="">钢笔</a>
+									<a href="">白板笔</a>
+									<a href="">记号笔</a>
+									<a href="">荧光笔</a>
+									<a href="">活动铅笔</a>
+									<a href="">活动铅芯</a>
+									<br><span class="w_left"></span>
+									<a href="">削笔器</a>
+									<a href="">铅笔/绘画笔</a>
+									<a href="">橡皮</a>
+									<a href="">修正液</a>
+									<a href="">修正带</a>
+									<a href="">墨汁/墨水</a>
+								</li>
+								<li>	
+									<a href="" class="_gt _gt1">办公桌上用品</a>
+									<div class="_gti"></div>
+									<a href="">和纸胶带/切割器</a>
+									<a href="">笔袋</a>
+									<a href="">笔筒/桌面收纳</a>
+									<a href="">书立</a>
+									<a href="">资料架</a>
+									<a href="">文件盘/文件篮</a>
+									<a href="">文件柜</a>
+									<a href="">胶棒/胶水/点状胶</a>
+									<a href="">订书机/订书钉</a>
+									<br><span class="w_left"></span>
+									<a href="">打孔机及配件</a>
+									<a href="">剪刀</a>
+									<a href="">长尾夹/票夹</a>
+									<a href="">尺/绘图工具</a>
+									<a href="">计算器</a>
+									<a href="">文具胶带/胶带座</a>
+									<a href="">双面胶</a>
+									<a href="">美工刀</a>
+									<a href="">裁纸相关用品</a>
+									<br><span class="w_left"></span>
+									<a href="">回形针/大头针/图钉</a>
+									<a href="">文具套装</a>
+								</li>	
+								<li>	
+									<a href="" class="_gt _gt1">白板及配件</a>
+									<div class="_gti"></div>
+									<a href="">白板/白板纸</a>
+									<a href="">软木板</a>
+									<a href="">电子白板</a>
+									<a href="">绿板</a>
+									<a href="">白板配件</a>			
+								</li>
+								<li>	
+									<a href="" class="_gt _gt1">标识展示</a>
+									<div class="_gti"></div>
+									<a href="">胸卡及配件</a>
+									<a href="">指示牌/展示用品</a>
+									<a href="">报刊杂志架</a>
+									<a href="">文教用品</a>
+								</li>
+								<li>	
+									<a href="" class="_gt _gt1">箱包</a>
+									<div class="_gti"></div>
+									<a href="">书包</a>
+									<a href="">收纳包/包中包</a>
+									<a href="">双肩包</a>
+									<a href="">单肩包/斜挎包</a>
+									<a href="">商务公文包</a>
+									<a href="">拉杆箱/拉杆包</a>
+									<a href="">箱包配件</a>
+									<a href="">电脑包</a>
+								</li>					
+							</ul>
+							<div class="r-img">
+								<a href=""><img src="21.jpg" alt=""></a>
+								<a href=""><img src="21_2.jpg" alt=""></a>
+							</div>
+					   </div>
+			</li>
+			<li class="">
+					<div><a href="" class="">耗材/办公用纸</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt">办公耗材
+										</a>		
+									<div class="_gti"></div>
+									<a href="" class="">打印机墨粉/硒鼓</a>
+									<a href="" class="">墨盒</a>
+									<a href="" class="">复印机墨粉/硒鼓</a>
+									<a href="" class="">碳带色带</a>
+									<a href="" class="">标签机色带</a>
+								</li>
+								<li> 
+								   <a href="" class="_gt _gt1">办公用纸</a>
+								   <div class="_gti"></div>
+								   <a href="">复印纸</a>
+								   <a href="">电脑帐票打印纸</a>
+								   <a href="">传真纸</a>
+								   <a href="">收银纸</a>
+								   <a href="">喷墨/相片打印纸</a>
+								   <a href="">电脑标签打印纸</a>
+								   <a href="">工程用纸</a>
+								   <a href="">其他OA用纸</a>
+								</li>
+							</ul>
+							<div class="r-img">
+								<a href=""><img src="22_1.jpg" alt=""></a>
+								<a href=""><img src="22_2.jpg" alt=""></a>
+							</div>
+					   </div>
+			</li>
+			<li class="">
+					<div><a href="" class="">食品/饮料/日用</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt"> 生活用品</a>		
+									<div class="_gti"></div>
+									<a href="" class="">面巾纸及周边</a>
+									<a href="" class="">厨卫用纸及周边</a>
+									<a href="" class="">垃圾袋</a>
+									<a href="">垃圾桶</a>
+									<a href="">餐具/一次性用品</a>
+									<a href="">清洁工具</a>
+									<a href="">个人洗护</a>
+									<a href="">衣物清洁及护理剂</a>
+									<br><span class="w_left"></span>
+									<a href="">家庭清洁及护理剂</a>
+									<a href="">衣架/挂钩/收纳</a>
+									<a href="">芳香/除味剂</a>
+									<a href="">驱虫用品</a>
+									<a href="">雨具用品</a>
+									<a href="">医药护理用品</a>
+									<a href="">家居家纺</a>
+									<a href="">文体娱乐用品</a>
+									<a href="">钟表</a>
+									<br><span class="w_left"></span>
+									<a href="">地垫/地毯</a>
+								</li>
+								<li> 
+								   <a href="" class="_gt _gt1">	定制</a>
+								   <div class="_gti"></div>
+								   <a href="">名片</a>
+								</li>
+								<li> 
+									<a href="" class="_gt _gt1">饮料</a>
+									<div class="_gti"></div>
+									<a href="">饮用水</a>
+									<a href="">茶饮料</a>
+									<a href="">碳酸饮料</a>
+									<a href="">咖啡/可可饮料</a>
+									<a href="">果汁</a>
+									<a href="">运动/功能饮料</a>
+									<a href="">乳品</a>
+								</li>
+								<li> 
+									<a href="" class="_gt _gt1">冲饮/咖啡/茶</a>
+									<div class="_gti"></div>
+									<a href="">咖啡/冲调饮品</a>
+									<a href="">茶/袋泡茶</a>
+								</li>
+								<li> 
+									<a href="" class="_gt _gt1">粮油/方便速食</a>
+									<div class="_gti"></div>
+									<a href="">方便面</a>
+									<a href="">速食品/罐头</a>
+									<a href="">大米/杂粮/食用油</a>
+									<a href="">调味料/果酱</a>
+								</li>	
+								<li> 
+									<a href="" class="_gt _gt1">休闲食品</a>
+									<div class="_gti"></div>
+									<a href="">膨化食品</a>
+									<a href="">糖果/巧克力</a>
+									<a href="">肉制品</a>
+									<a href="">蛋糕糕点</a>
+									<a href="">威化/饼干/曲奇</a>
+							    </li>
+								<li> 
+									<a href="" class="_gt _gt1">酒类</a>
+									<div class="_gti"></div>
+									<a href="">鸡尾酒</a>
+									<a href="">啤酒</a>
+								</li>				 		 	 
+							</ul>
+							<div class="r-img">
+								<a href=""><img src="23.jpg" alt=""></a>
+							</div>
+					   </div>
+			</li>
+			<li class="">
+					<div><a href="" class="">作业/劳防用品</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt"> 包装/作业用品
+										</a>		
+									<div class="_gti"></div>
+									<a href="" class="">封箱胶带</a>
+									<a href="" class="">自封袋</a>
+									<a href="" class="">五金工具/套装</a>
+									<a href="" class="">推车</a>
+									<a href="" class="">梯子</a>
+									<a href="" class="">捆包用品</a>
+									<a href="" class="">纸箱/塑料箱</a>
+								</li>
+								<li> 
+								   <a href="" class="_gt _gt1">	劳防用品</a>
+								   <div class="_gti"></div>
+								   <a href="">手部防护</a>
+								   <a href="">呼吸防护</a>
+								   <a href="">工装/防护服</a>
+								   <a href="">足部防护</a>
+								   <a href="">工业清洁用品</a>
+								   <a href="">头部防护</a>
+								   <a href="">眼脸耳防护</a>
+								   <a href="">安全标识用品</a>
+								</li>
+							</ul>
+							<div class="r-img">
+								<a href=""><img src="24.jpg" alt=""></a>
+							</div>
+					   </div>
+			</li>
+			<li class="">
+					<div><a href="" class="">电脑/通讯/数码</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt"> 电脑整机</a>		
+									<div class="_gti"></div>
+									<a href="" class="">台式机/一体机</a>
+									<a href="" class="">笔记本电脑</a>
+									<a href="" class="">平板电脑</a>
+								</li>
+								<li> 
+								   <a href="" class="_gt _gt1">	电脑配件</a>
+								   <div class="_gti"></div>
+								   <a href="">内存</a>
+								   <a href="">硬盘</a>
+								   <a href="">刻录机/光驱</a>
+								   <a href="">防窥屏</a>
+								   <a href="">平板电脑配件</a>
+								   <a href="">笔记本电脑配件</a>
+								   <a href="">电脑软件</a>
+								</li>
+								<li>
+									<a href="" class="_gt">外设/网络设备</a>	
+									<div class="_gti"></div>
+									<a href="" class="">网络配件</a>
+									<a href="" class="">键盘</a>
+									<a href="" class="">鼠标</a>
+									<a href="" class="">鼠标垫</a>
+									<a href="" class="">插座</a>
+									<a href="" class="">3C清洁用品</a>
+									<a href="" class="">线缆网线</a>
+									<a href="" class="">摄像头</a>
+									<a href="" class="">手写板/绘图板</a>
+									<a href="" class="">UPS电源</a>
+									<a href="" class="">路由器</a>
+									<a href="" class="">交换机</a>
+								</li>
+								<li>
+									<a href="" class="_gt"> 手机/通讯/配件</a>		
+									<div class="_gti"></div>
+									<a href="" class="">手机</a>
+									<a href="" class="">对讲机</a>
+									<a href="" class="">电话机</a>
+									<a href="" class="">会议电话</a>
+									<a href="" class="">充电器/数据线</a>
+									<a href="" class="">车载配件</a>
+									<a href="" class="">话务耳麦及设备</a>
+									<a href="" class="">移动电源</a>
+								</li>
+								<li>
+									<a href="" class="_gt"> 数码存储/配件</a>	
+									<div class="_gti"></div>
+									<a href="" class="">电池/充电器</a>
+									<a href="" class="">笔记本电脑</a>
+									<a href="" class="">U盘</a>
+									<a href="" class="">存储卡</a>
+									<a href="" class="">读卡器</a>
+									<a href="" class="">移动硬盘</a>
+									<a href="" class="">刻录盘片</a>
+									<a href="" class="">盘片附件</a>
+									<a href="" class="">数码包</a>
+								</li>
+								<li>
+									<a href="" class="_gt"> 摄影摄像</a>		
+									<div class="_gti"></div>
+									<a href="" class="">数码相机</a>
+									<a href="" class="">单电/微单相机</a>
+									<a href="" class="">单反相机</a>
+									<a href="" class="">一次成像</a>
+									<a href="" class="">行车记录仪</a>
+								</li>
+								<li>
+									<a href="" class="_gt"> 数码影音</a>		
+									<div class="_gti"></div>
+									<a href="" class="">耳机/耳麦</a>
+									<a href="" class="">音箱</a>
+									<a href="" class="">收录/收音机</a>
+									<a href="" class="">电子书</a>
+									<a href="" class="">录音笔</a>
+									<a href="" class="">麦克风</a>
+									<a href="" class="">智能设备</a>
+								</li>		
+							</ul>
+					   </div>
+			</li>
+			<li class="">
+					<div><a href="" class="">办公设备</a></div>
+					<div class="bg-white d-dz"> 
+						<ul class="column">
+							<li>
+								<a href="" class="_gt">办公机器</a>
+								<div class="_gti"></div>
+								<a href="" class=""> 碎纸机</a>
+								<a href="" class="">考勤监控设备</a>
+								<a href="" class="">点钞/验钞机</a>
+								<a href="" class="">装订机</a>
+								<a href="" class="">装订机耗材</a>
+								<a href="" class="">扫描仪/扫描枪</a>
+								<a href="" class="">投影机/激光笔</a>
+								<a href="" class="">投影幕</a>
+								<a href="" class="">塑封膜</a>
+							</li>
+							<li> 
+								<a href="" class="_gt _gt1">打印设备类</a>
+								<div class="_gti"></div>
+								<a href="">打印机</a>
+								<a href="">标签打印机</a>
+								<a href="">多功能一体机</a>
+								<a href="">复合机</a>
+								<a href="">条码打印机</a>
+								<a href="">行式打印机</a>
+								<a href="">复印机租赁</a>
+								<a href="">证卡打印机及耗材</a>
+								<br><span class="w_left"></span>
+								<a href="">票据打印机</a>
+							</li>
+						</ul>
+						<div class="r-img">
+							<a href=""><img src="26_1.jpg" alt=""></a>
+							<a href=""><img src="26_2.jpg" alt=""></a>
+						</div>
+					</div>
+			</li>
+			<li class="">
+					<div><a href="" class="">办公家电</a></div>
+					<div class="bg-white d-dz"> 
+							<ul class="column">
+								<li>
+									<a href="" class="_gt"> 大家电
+										</a>		
+									<div class="_gti"></div>
+									<a href="" class="">平板电视</a>
+									<a href="" class="">空调</a>
+									<a href="" class="">冰箱</a>
+									<a href="" class="">热水器</a>
+								</li>
+								<li> 
+								   <a href="" class="_gt _gt1">	生活电器</a>
+								   <div class="_gti"></div>
+								   	<a href="">空气净化器</a>
+								   <a href="">电风扇/空调扇</a>
+								   <a href="">吸尘器</a>
+								   <a href="">加湿器</a>
+								   <a href="">饮水机</a>
+								   <a href="">挂烫机/熨斗</a>
+								   <a href="">除湿机</a>
+								   <a href="">取暖电器</a>
+								   <a href="">台灯</a>
+								</li>
+								<li> 
+									<a href="" class="_gt _gt1">厨房电器</a>
+									<div class="_gti"></div>
+									<a href="">料理/榨汁机</a>
+									<a href="">豆浆机</a>
+									<a href="">电饭煲</a>
+									<a href="">面包机</a>
+									<a href="">咖啡机</a>
+									<a href="">微波炉</a>
+									<a href="">电烤箱</a>
+									<a href="">电磁炉</a>
+									<a href="">电壶/热水瓶</a>
+									<a href="">其它办公电器</a>
+									<a href="">多用途锅</a>
+								</li>
+							</ul>
+							<div class="r-img">
+								<a href=""><img src="27.jpg" alt=""></a>
+							</div>
+					   </div>
+				</li>
+			<li class="dj">
+					<div> <a href="" class="">办公家具</a></div>
+					<div class="bg-white d-dz"> 
+						<ul class="column">
+							<li>
+								<a href="" class="_gt">办公家具类</a>
+					            <div class="_gti"></div>
+								<a href="" class="">椅子</a>
+								<a href="" class="">桌子</a>
+								<a href="" class="">储物柜</a>
+								<a href="" class="">钥匙箱</a>
+								<a href="" class="">沙发</a>
+								<a href="" class="">组合工作位</a>
+								<a href="" class="">货架/书架</a>
+							</li>
+							<li> 
+							   <a href="" class="_gt _gt1">	保险箱</a>
+							   <div class="_gti"></div>
+							   <a href="">保险箱</a>
+							</li>
+						</ul>
+						<div class="r-img">
+							<a href=""><img src="28.jpg" alt=""></a>
+						</div>
+				   </div>
+			</li>
+			<li class="dj">
+				<div>	<a href="" class="">定制/礼品/福利</a></div>
+				<div class="bg-white d-dz"> 
+					    <ul class="column">
+							<li>
+								<a href="" class="_gt"> 福利/礼品</a>		
+							    <div class="_gti"></div>
+								<a href="" class="">积分充值</a>
+								<a href="" class="">积分充值</a>
+								<a href="" class="">企业福利</a>
+							</li>
+							<li> 
+							   <a href="" class="_gt _gt1">	定制</a>
+							   <div class="_gti"></div>
+							   <a href="">名片</a>
+							</li>
+						</ul>
+						<div class="r-img">
+							<a href=""><img src="31.jpg" alt=""></a>
+						</div>
+				   </div>
+			</li>
+			
+	  </ul>
+	<!-- 轮播图上隐藏的div -->
+		  
+	    
+
+	  
+	
+	
+    <!-- 轮播图右侧的定制服务和易动态 -->
+	  
+	  <table class="tfw">
+		  <tr class="tr1">
+			  <td class="tr11"><a href=""><span></span></a> </td>
+			  <td class="tr12"><a href=""><span>定制服务</span></a> </td>
+			  <td class="tr13"><a href=""><img src="office_services.jpg" alt=""> </a> </td>
+			  <td>dkd</td>
+		  </tr>
+		  <tr class="tr2">
+			  <td class="tr21">	<a href=""><span></span></a> </td>
+			  <td class="col-2 tr22"><a href="">我的<br> 常购商品</a></td>
+			  <td class="tr23"><a href=""><img src="used_buy.jpg" alt=""> </a> </td>
+		  </tr>
+		  <tr class="tr3">
+			  <td class=""><a href="" class=""><div class="tr31"></div><p> 快速定单</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr32"></div><p> 定单审核</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr33"></div><p> 快速送货</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr34"></div><p> 定单状态</p></a></td>
+		  </tr>
+		  <tr class="tr3 tr4">
+			  <td class=""><a href="" class=""><div class="tr31 tr41"></div><p> 免费退换</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr42"></div><p> 财务报表</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr43"></div><p> 采购贴士</p></a></td>
+			  <td class=""><a href="" class=""><div class="tr31 tr44"></div><p> 随身查询</p></a></td>
+		  </tr>
+	  </table>
+	  <div class="ydt">
+		  <h6 class="">易动态 <a href=""> <span>查看更多</span></a></h6>
+		  <div class=""><a href=""> 2019-05-20 <span> 2019年端午节放假和赔...</span></a></div>
+		  <div class=""><a href=""> 2019-05-20 <span> 2019年端午节放假和赔...</span></a></div>
+		  <div class=""><a href=""> 2019-05-20 <span> 2019年端午节放假和赔...</span></a></div>
+	  </div>
+
+	  <div class="carousel mt-2 mx-auto" data-ride="carousel" id="lunbo">
+		  <div class="carousel-inner">
+				<div class="carousel-item active">
+						<a href="">
+							<img src="topbanner0724.jpg" class="" alt="">					
+						</a>
+				</div>
+				<div class="carousel-item">
+						<a href="">
+							<img src="http://www.ey100.com/Promotions/banner/banner93.jpg" class="" alt="">
+						</a>
+				</div>
+			<div class="carousel-item">
+					<a href="">
+						<img src="http://www.ey100.com/Promotions/Point/point0606.jpg" class="" alt="">
+					</a>
+			</div>
+			<a href="#lunbo" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+			<a href="#lunbo" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+			<ul class="carousel-indicators">
+				<li class="active" data-slide-to="0"></li>
+				<li data-slide-to="1"></li>
+				<li data-slide-to="2"></li>
+			</ul>
+			
+			</div>
+	  </div>
+
+
+
 	  <!-- 服务的五幅图-->
 	  <div class="d-flex justify-content-center fw   mt-5 ">
 		  <a href=""><img src="guide_1012.jpg" alt=""/></a>
@@ -272,116 +1048,9 @@
 			  </div>
 		  </div>
 	  </div>
+	  
 	  <!-- 脚部-->
-	  <div id="footer" >
-		  <div id="footert">
-			  <ul>
-				  <li>
-					  <a href="" id="ta1"></a>
-					  <a href="" >邮箱注册 快捷方便</a><br>
-					  <span>输入邮箱+验证码+设定密码=完成注册<br>易优百邮箱:mail@ey100.com</span>
-				  </li>
-				  <li>
-					  <a href=""  id="ta2"></a>
-					  <a href="" >手机注册 一步搞定</a><br>
-					  <span>输入手机号-输入验证码-获取手机<br>验证码-设定密码-完成注册</span>
-				  </li>
-				  <li>
-					  <a href=""  id="ta3"></a>
-					  <a href="">易优百客服热线</a><br>
-					  <span>办公用品订购热线：400-820-0798</span>
-				  </li>
-				  <li>
-					  <a href=""  id="ta4"></a>
-					  <a href="">在线客服</a><br>
-					  <span>工作日时间：<br>9:00至18:00</span>
-				  </li>
-			  </ul>
-		  </div>
-		  <div id="footerm">
-			  <div class="left-img">
-				  <img src="ey100_photo.jpg" alt="">
-			  </div>
-			  <div class="left">
-				  <a href="">关于易优百</a>
-				  <p>易优百，隶属于百年文具企业国誉集团</p>
-				  <p>国誉集团创始于1905年，是日本家喻户晓的文具及办公家具品牌。2005年，国誉集团在成立100周年之际 正式进入中国市场，建立了国誉商业（上海）有限公司，并创立了易优百，以日本式亲切服务以及匠人精神服务于中国...</p>
-			  </div>
-			  <ul>
-				  <li>
-					  新手指南
-					  <ul>
-						  <li><a href="">新用户注册</a></li>
-						  <li><a href="">信息变更</a></li>
-						  <li><a href="">取消注册</a></li>
-						  <li><a href="">注册新用户</a></li>
-						  <li><a href="">信息变更</a></li>
-					  </ul>
-				  </li>
-				  <li>常见问题解答
-					  <ul>
-						  <li><a href="">常见问题</a></li>
-						  <li><a href="">开票和转账</a></li>
-						  <li><a href="">赠品细则声明</a></li>
-						  <li><a href="">合同订立与下载</a></li>
-					  </ul>
-				  </li>
-				  <li>
-					  办公用品的订购方式
-					  <ul>
-						  <li><a href="">商品的订购方式</a></li>
-						  <li><a href="">商品的交付、付款与拒收</a></li>
-						  <li><a href="">配送和支付方式</a></li>
-						  <li><a href="">复印机租赁</a></li>
-						  <li><a href="">礼品定制服务</a></li>
-						  <li><a href="">弹性福利、员工福利采购</a></li>
-					  </ul>
-				  </li>
-				  <li>退换货
-					  <ul>
-						  <li><a href="">退换货政策</a></li>
-						  <li><a href="">退换货流程</a></li>
-						  <li><a href="">不能退换货说明</a></li>
-					  </ul>
-				  </li>
-				  <li>
-					  表格下载
-					  <ul>
-						  <li><a href="">资料变更联系单</a></li>
-						  <li><a href="">快捷订购单</a></li>
-						  <li><a href="">办公家具专用订购单</a></li>
-						  <li><a href="">发票资料管理表下载</a></li>
-						  <li><a href="">客户心声</a></li>
-						  <li><a href="">印章订购单</a></li>
-					  </ul>
-				  </li>
-			  </ul>
-		  </div>
-		  <div id="footerb">
-			  <p id="tb-1">
-				  <a href="">个人情报保护方针</a>|
-				  <a href="">免责条款</a>|
-				  <a href="">易优百使用条款</a>|
-				  <a href="">联系我们</a>|
-				  <a href="">人才招募</a>
-			  </p>
-			  <p id="tb-2">
-				  ©2019国誉商业（上海）有限公司 All rights reserved
-			  </p>
-			  <div id="tb-d1">
-				  <span id="d1-s1"></span>
-				  <span id="d1-s2"></span>
-				  <span id="d1-s3"></span>
-				  <a href="" id="d1-a1"></a>
-				  <a href="" id="d1-a2"></a>
-				  <a href="" id="d1-a3"></a>
-			  </div>
-			  <div id="tb-d2" class="row mx-0 ">
-			<span class="text-center bg-white col-2 offset-5 h-75 w-25  px-0 mt-1  ">友情链接&nbsp;&nbsp;<a href="">Kaunet</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">国誉KOKUYO</a>
-			</span>
-			  </div>
-		  </div>
-	  </div>
+		  <iframe src="footer.html " frameborder="0" scrolling="no" width="100%" height="700px"></iframe>
   </div>
 </body>
 </html>

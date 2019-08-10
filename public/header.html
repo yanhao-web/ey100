@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>头部</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" href="bootstrap.css"/>
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <style>
+  *{margin:0;padding:0;}
+  #header{display:flex;justify-content:space-around;}
+  #header a{text-decoration:none;color:#666;}
+  #headerl{font-size:6px;color:#666;display:flex;justify-content:space-around;}
+  #headerl span{padding:0 30px;}
+  #headerl{margin-left:-13%;}
+  #headerl span:last-child{padding:0 5px;}
+  #headerr{font-size:12px;color:#666;}
+  ul{position:relative;list-style:none;text-align:left;border:2px solid #e2051b;width:120px;padding:0px 10px 20px 10px;}
+  ul{margin-top:-900px;margin-left:50px;transition:1s;z-index:1000;}
+  .dt1:hover{transform:translate(-70px,870px) !important;}
+  .dt1+.dt1{margin-left:10px !important;}
+  ul li:first-child span{background:#e2051b;padding:15px 14px;width:121%;display:flex;margin-left:-10px;color:#f8f8f8;line-height:10px;}
+  ul a:hover{color:#e2051b !important;}
+  .dt1{margin-left:40px;width:100px;}
+  #header{padding:10px 0;}
+  #ds0{display:flex;}
+  #headerb{background:#f8f8f8;}
+  #headerb img{margin-left:8%;}
+  #headerb{border-bottom:3px solid #e2051b;}
+  .djlt{float:right;position:relative;top:-17px;left:17px;background:url(index_icon.png) no-repeat;background-position:-2px -275px;background-size:700%;width:50px;height:30px;}
+  .djlt.lt1{top:1px;}
+  .djlt.lt2{top:1px;}
+  .djlt0{display:inline-block;transform:translate(70px,-35px);background:url(index_icon.png) no-repeat;background-position:-2px -300px;background-size:700%;width:50px;height:30px;}
+  .dt1 li+li{transform:translateY(-35px);}
+  </style>
+</head>
+<body>
+<div class="container-fluid  px-0">
+  <div id="header">
+    <div id="headerl">
+      <span>北京</span>  <span>欢迎来到易优百，请登录！</span><a href="user_login.html">登录</a></span><span>|</span><span><a href="user_regphone.html">注册</a></span>
+    </div>
+    <div id="headerr">
+        	   
+      <div id="ds0">
+
+        <div class="dt1">
+          <span id="sp1">我的易优百</span><div class="djlt"></div> 
+        <ul id="ds1">
+          <li class=""><span>我的易优百</span><div class="djlt0"></div> </li>
+          <li class=""> <a href="">我的常购商品</a></li>
+          <li class=""><a href="">我的订单</a></li>
+          <li class=""><a href="">我的报表</a></li>
+          <li class=""><a href="">我的积分</a></li>
+          <li class=""><a href="">我的预定</a></li>
+          <li class=""><a href="">个人资料</a></li>
+        </ul>
+      </div>
+
+      <span>|</span>
+      <div class="dt1">
+          <span id="sp2">我的消息</span>  <div class="djlt lt1"></div> 
+        <ul id="ds2">
+            <li class=""><span>我的消息</span> <div class="djlt0"></div></li>
+            <li class=""><a href="">立即登录查看</a></li>
+        </ul>
+      </div>
+      <span>|</span> 
+      <div class="dt1">
+          <span id="sp3">客户服务 </span><div class="djlt lt2"> </div> 
+        <ul id="ds3">
+            <li class=""><span>客户服务</span> <div class="djlt0"></div></li>
+            <li class=""><a href="">在线客服</a></li>
+              <li class=""><a href="">在线退换货</a></li>
+                <li class=""><a href="">常见问题</a></li>
+                  <li class=""><a href="">联系我们</a>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div id="headerb">
+    <img src="new_logo.png" alt="">
+  </div>
+  </div>
+  </body>
+</html>

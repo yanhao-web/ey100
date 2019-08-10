@@ -6,6 +6,7 @@ router.get("/v1/check/:phone",(req,res)=>{
   var $phone=req.params.phone;
   pool.query('select * from ey100_user where phone=?',[$phone],(err,result)=>{
     if(err)throw err;
+	console.log(result);
     if(result.length>0){res.send('1');}else{res.send('0');}
   });
 });
