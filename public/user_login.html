@@ -34,6 +34,7 @@
 		#d7 a:hover{text-decoration:underline;}
 		.font-12 {font-size:13px;}
 	</style>
+	<script src="footer.js"></script>
 	<script>
 	  function login(){
 		  var $phone=phone.value;
@@ -45,10 +46,13 @@
 				xhr.onreadystatechange=function(){
 				  if(xhr.readyState==4&&xhr.status==200){
 					  var result=xhr.responseText;
-            if(result=="1"){alert('登录成功');}else if(result=="0"){alert('登录失败');}
+						if(result=="1"){
+							alert('登录成功');
+							location.assign("http://127.0.0.1:8080/Product.html");
+					}else if(result=="0"){alert('登录失败');}
 					}
 				};
-				xhr.open('get','/user/v1/login/'+$phone+'/'+$upwd,true);
+				xhr.open('get','http://127.0.0.1:8080/user/v1/login/'+$phone+'/'+$upwd,true);
 				xhr.send();
 			}
 		}
@@ -79,7 +83,7 @@
 			</div>
 		</div>
 	</div>
-	  <iframe src="footer.html " frameborder="0" scrolling="no" width="100%" height="700px"></iframe>
+	  <footer id="footer"></footer>
   </div>
 </body>
 </html>  

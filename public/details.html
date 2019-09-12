@@ -6,10 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="details.css">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="axios.min.js"></script>
+    <script src="qs.min.js"></script>
+    <link rel="stylesheet" href="city.css">
 </head>
 <body>
     <!-- 引入头部 -->
-    <iframe class="if1" src="demo.html" frameborder="0" scrolling="no"></iframe>
+    <!-- <iframe class="if1" src="demo.html" frameborder="0" scrolling="no"></iframe> -->
+    <header id="demo"></header>
     <!-- 商品简图 -->
     <ul class="j_t m-left">
         <li><a href="">首页</a></li>
@@ -17,29 +23,38 @@
         <li> 风格派 口袋水果风扇 (西柚橙) A208H</li>
     </ul>
     <!-- 放大图片 -->
+    <!-- 引入vue组件app -->
+    <div id="app">
     <div class="j_tt">
         <ul class="m-left _5t">
-            <li><img src="DH17-7591 (2).png" alt=""></li>
-            <li><img src="DH17-7591-1.png" alt=""></li>
-            <li><img src="DH17-7591-2.png" alt=""></li>
-            <li><img src="DH17-7591-3.png" alt=""></li>
-            <li><img src="DH17-7591-4.png" alt=""></li>
+                <li></li>
+            <li><img @mouseover="zool(i,$event)" :data-i="i" v-for="(elem,i) of pics" :key="i" :src="pics[i].sm" alt=""></li>
+            <li></li>
         </ul>
-        <div class="s_f"></div> 
+        <div class="supermask" @mouseover="toggle" @mousemove="mov"  @mouseout="toggle"></div>
+        <div class="s_f"><img :src="pics[i].lg" alt="" width="99.9%">
+            <div class="mask" :class="show==false?'disnone':''" :style={left:left+'px',top:top+'px'}></div></div> 
+        <div class="big" :class="show==false?'disnone':''" :style={'background-image':`url(${pics[i].lg})`,'background-position':bgposition}></div> 
         <div class="spj">
             <p>风格派 口袋水果风扇 (西柚橙) A208H</p>
             <p>商品积分：<span>58</span></p>
             <p>商品编号：DH17-7591</p>
             <p>商品品牌：<a href="">风格派</a></p>
             <p>商品评分：(己有0人评分)</p>  
-            <p>配送至：
+            <!-- <div class="p_s">配送至：
                 <select name="" id="s1">
-                    <option value=""></option>
-                </select>
-                <select name="" id="s2">
+                    <option value="">1</option>   
                 </select>
                 可配送
-            </p>
+                <div class="s--">
+                    <select name="" id="s2">
+                    </select>
+                    <select name="" id="s3">
+                    </select>
+                </div>
+            </div> -->
+            <!-- 引入城市组件 -->
+            <city></city>
             <p>库存状况：5个工作日到货（实际以客服回复为准）</p>
             <p class="s_l">我要购买：
                 <button>-</button>
@@ -56,36 +71,229 @@
                 <p>请参考退换货政策</p>
              </a>
         </div>
+    </div></div>
+    <!-- 动态切换 -->
+     <!-- 商品信息一栏 -->
+    <div class="m-left d_rl">
+        <div class="d_l">
+            <p><a href="">产品属性</a></p>
+            <p>看过此商品的顾客还看过</p>
+            <p>购买此商品的顾客还购买过</p>
+            <p>同类最热销</p>
+        </div>
+        <div class="d_r">
+            <div class="btns">
+                <button data-target="spx">商品信息</button>
+                <button data-target="gkp">顾客评论(0)</button>
+                <button data-target="cpz">产品咨询(0)</button>
+                <button data-target="shf">售后服务</button>
+                <button data-target="dgf">订购方式</button>
+                <button data-target="thh">退换货政策</button>
+            </div>
+            <!-- 退换货政策 -->
+            <div class="thh">
+                <div>退换货总则</div>
+                <div>1、企业客户依据双方签订的合同相关规定进行退换货。</div>
+                <div>2、个人客户在易优百商品交付后15日以内，如遇以下退换货条件所列的情况，可与易优百客户服务中心取得联系，并凭发票办理免费退换货。月结个人客户结账期内， 未收到货品发</div>
+                <div>票时， 可凭借交货单办理退换货手续。</div>
+                <div>3、因个人客户自身原因造成退换货的，易优百将根据具体相关法律规定或合同约定提供退换货服务。</div>
+                <div>4、家电、手机和整机类产品按国家规定的三包条款执行。</div>
+                <div>5、退款时间：个人客户退回的商品完好的，易优百在收到退回商品之日起7日内或双方另行约定的时间内向个人客户返还已支付的商品价款。</div>
+                <div>退换货</div>
+                <div>1、退换货条件</div>
+                <div class="ml_2">商品交付后的15日之内，出现下列情形之一的可以申请退换货</div>
+                <div class="ml_2">① 商品有质量问题（发现可能是质量问题时请立即停止使用并联系易优百客服人员）。</div>
+                <div class="ml_2">② 法律规定的可退换货的情形，但双方事先特别约定不可退换货的商品除外。</div>
+                <div>2、申请退换货办理流程</div>
+                <div>
+                    <img src="content_ey100_72.jpg" alt="">
+                </div>
+                <div>
+                        3、操作步骤
+                </div>
+                <div>
+                    <img src="content_ey100_73.jpg" alt="">
+                </div>
+                <div>开始办理退换货</div>
+                <div>4、POS机刷卡非企业客户退款说明</div>
+                <div class="ml_2">① 我们将通过网银退款至您支付时使用的银行卡账户。</div>
+                <div class="ml_2">② 因需与支付卡银行确认，一般处理时间为易优百收到完好货物后7日内或双方另行商定的时间。</div>
+                <div class="ml_2">③ 如果货物取后7日后您还未收到退款，请致电400-820-0798与客服中心联系。</div>
+                <div>5、款到发货个人客户退货说明</div>
+                <div class="ml_2">① 通过支付宝支付的个人客户，请填写您的支付宝账户和姓名。</div>
+                <div class="ml_2">② 通过银联支付的个人客户，请填写您的银行账号、开户行全称、支行名称、账户名称。</div>
+                <div class="ml_2">③ 因需与您的支付卡银行确认，一般处理时间为易优百收到完好货物后7日内或双方另行商定的时间。</div>
+                <div style="font-weight:bolder;color:#000;">6、对下列情形之一的商品，不支持7日无理由退换货，请购买前确认！</div>
+                <div class="ml_2">① 因个人客户超出查验和确认商品品质、功能需要而使用商品，导致商品使用性能损坏、价值贬损较大，影响二次销售的。如外包装损坏或丢失的硒鼓、墨盒等办公消耗品。</div>
+                <div class="ml_2">② 根据个人客户的要求、特别订制购买的商品。</div>
+                <div class="ml_2">③ 拆封后易影响人身安全或者生命健康的商品，或者拆封后易导致商品品质发生改变的商品，如无质量问题的食品饮料类商品。</div>
+                <div class="ml_2">④ 拆封后的音像制品、计算机软件等数字化商品。</div>
+                <div class="ml_2">⑤ 一经激活或者试用后价值贬损较大的商品，如手机等数码产品。</div>
+                <div class="ml_2">⑥ 其他法律规定不适用7日无理由退货的商品。</div>
+            </div>
+            <!-- 订购方式 -->
+            <div class="dgf">
+              <div class="or4"><img src="help_pro.gif" alt=""></div>
+              <div class="or4"><img src="order_1.gif" alt=""></div>
+              <div class="or4"><img src="order_2.gif" alt=""></div> 
+              <div class="or4"><img src="order_3.gif" alt=""></div> 
+            </div>  
+            <!-- 售后服务 -->
+        <div class="shf">
+            <div class="fk">
+                <div>
+                </div>
+                付款方式
+            </div>
+            <div class="igif">
+                <img src="payment_img_1.gif" alt="">
+            </div>
+            <div class="igif">
+                <img src="payment_img_2.gif" alt="">
+            </div>
+            <div class="igif">
+                <img src="payment_img_3.gif" alt="">
+            </div>
+            <p class="i_2">
+                部分商品需要款到后发货（确认款到后通知客户到货时间）使用支票时，请按以下填写抬头，</p>
+                <p class="i_2">上海抬头：国誉商业（上海）有限公司，北京抬头：国誉商业（上海）有限公司北京分公司。
+            </p>
+            <div class="fk">
+                <div></div>
+                转账指南</div>
+            <p>上海公司</p>
+            <table class="tgs" cellspacing="0.001px">
+                <tr>
+                    <td>公司名称</td>
+                    <td>国誉商业(上海)有限公司北京分公司</td>
+                </tr>
+                <tr>
+                    <td>开户银行</td>
+                    <td>上海浦东发展银行北京朝阳支行</td>
+                </tr>
+                <tr>
+                    <td>转账账号</td>
+                    <td>91080155300000236</td>
+                </tr>
+            </table>
+            <p class="psh">
+                注意：<br>
+                （1）请在转款后将转账凭证传真到800-820-7838，发传真的时候请标注好订单号码，以方便我们尽快确认您的到款。<br>
+                    
+                 （2）在汇款单附言栏中请务必注明客户编号或订单号，以便财务尽快查询款项；<br>
+                    
+                 （3）若转账付款人名称与开票抬头不一致，需要提供第三方付款证明，详情在收到转账凭证后，会由专员与您联系说明。
+            </p>
+        </div>
+            <!-- 产品咨询一栏 -->
+        <div class="cpz">   
+            <div class="_zx">
+                    <h3>商品咨询<span>共0条</span></h3>
+                    <div>
+                       <input type="text">
+                       <button class="fbdp s_s">搜索</button>
+                    </div> 
+            </div>
+            <div class="r_2">
+                <div></div>
+                <div>
+                    <span>提问内容：</span>
+                    <textarea name="" id="are" cols="110" rows="5"></textarea>
+                </div>
+                <div>邮箱地址：<input type="text"></div>
+                <div><button class="fbdp">发布问题</button></div>
+            </div>
+        </div>       
+    <!-- 顾客评论一栏 -->
+    <div class="gkp">
+        <div class="r_2">
+            <div>
+                用户评价： 舒适度1 2 3 4 5 外观1 2 3 4 5 性价比1 2 3 4 5 商品满意度1 2 3 4 5
+            </div>
+            <div>
+                <span>评价内容：</span>
+                <textarea name="" class="area" cols="110" rows="5"></textarea>
+            </div>
+            <div>
+                <button class="fbdp">
+                    发布点评
+                </button>
+            </div>
+        </div>
     </div>
-  <!-- 动态js脚本 -->
-    <script>
-        //城市的下拉菜单
-        var sheng=["北京" ,"上海" ,"天津" ,"江苏省", "安徽省", "福建省", "甘肃省", "广东省","广西", "贵州省", "广西壮族自治区", "新疆维吾尔自治区", "宁夏回族自治区", "西藏自治区", "内蒙古自治区", "海南省" ,"河北省", "河南省", "黑龙江省" ,"湖北省" ,"湖南省" ,"吉林省", "江西省" ,"辽宁省", "内蒙古", "宁夏", "青海省", "山东省", "山西省", "陕西省", "四川省", "云南省", "浙江省", "重庆市", "其它省"];
-        var s2=document.getElementById("s2");
-        var frag=document.createDocumentFragment();
-        for(var i=0;i<sheng.length;i++){
-            var opt=new Option(sheng[i]);
-            frag.appendChild(opt);
-        }
-        s2.appendChild(frag);
-        // 对商品数量进行获取
-       var rg=document.querySelector("p.s_l");
-       var btns=rg.children;
-       var input=btns[1];
-       var b1=btns[0];
-       var b2=btns[2];
-       console.log(input);
-       b1.onclick=function(){
-           input.value--;
-           if(input.value<1){
-              input.value=1;
-           }
-       };
-       b2.onclick=function(){
-           input.value++;
-       };
-    </script>
+    <!-- 商品信息一栏 -->
+        <div class="r_1 spx">
+                <ul>
+                    <li>口袋便携，三档风扇，仅重110g，内置2000mAh锂电池</li>
+                    <li>材质：ABS</li>
+                    <li>尺寸(mm)：H 178 W 82 D 27 mm</li>
+                    <li>净重(g)：110.00g</li>
+                    <li>输入：DC 5V/1A</li>
+                    <li>风扇功率：2.0W</li>
+                    <li>电池容量：2000mAh</li>
+                </ul>
+                <div>
+                    <p>商品展示</p>
+                </div>
+                <img src="DH17-7591.jpg" alt="">
+                <img src="DH17-7591-1.jpg" alt="">
+                <img src="DH17-7591-2.jpg" alt="">
+                <img src="DH17-7591-3.jpg" alt="">
+                <img src="DH17-7591-4.jpg" alt="">
+            </div>
+    </div>
+    </div>
     <!-- 引入尾部 -->
-    <iframe class="if2" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    <!-- <iframe class="if2" src="footer.html" frameborder="0" scrolling="no"></iframe> -->
+    <footer id="footer"></footer>
+
+  <!-- 动态js脚本 -->
+    <script src="jquery-1.11.3.js"></script>
+    <script src="header.js"></script>
+    <script src="details.js"></script>
+    <script src="footer.js"></script>
+    <script src="city.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",     
+            data:{  left:0,
+                    top:0,
+                    show:false,
+                    pics:[{pid:1,sm:"DH17-7591 (2).png",lg:"http://img3.ey100.com/ItemImages/20/2001/2001005/DH17-7591/ViewBig/DH17-7591.png"},
+                    {pid:2,sm:"DH17-7591-1.png",lg:"http://img3.ey100.com/ItemImages/20/2001/2001005/DH17-7591/ViewBig/DH17-7591-1.png"},
+                    {pid:3,sm:"DH17-7591-2.png",lg:"http://img3.ey100.com/ItemImages/20/2001/2001005/DH17-7591/ViewBig/DH17-7591-2.png"},
+                    {pid:4,sm:"DH17-7591-3.png",lg:"http://img3.ey100.com/ItemImages/20/2001/2001005/DH17-7591/ViewBig/DH17-7591-3.png"},
+                    {pid:5,sm:"DH17-7591-4.png",lg:"http://img3.ey100.com/ItemImages/20/2001/2001005/DH17-7591/ViewBig/DH17-7591-4.png"}],
+                    i:0
+            },
+            methods:{
+                mov(e){
+                    this.top=parseFloat(e.offsetY)-50;
+                    this.left=parseFloat(e.offsetX)-50;
+                    if(this.left<0){ 
+                        this.left=0;
+                    }else if(this.left>310){
+                        this.left=310;
+                    }
+                    if(this.top<0){
+                        this.top=0;
+                    }else if(this.top>310){
+                        this.top=310;
+                    }
+                },
+                toggle(){
+                    this.show=!this.show;
+                },
+                zool(i,e){
+                    this.i=e.target.dataset.i;
+                }
+            },
+            computed:{
+                bgposition(){
+                    return `${-parseInt(this.left)}px ${-parseInt(this.top)}px`;
+                }
+            }
+        });
+    </script>
 </body>
 </html>

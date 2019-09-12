@@ -32,6 +32,7 @@
 		#a4,#a5{background:#e2051b;}
 		#a6{color:#a20000;text-decoration:none;}
 	</style>
+	<script src="footer.js"></script>
 	<script>
 	  function fkph(){
 		  var $phone=phone.value;
@@ -46,7 +47,7 @@
           if(result=="1"){s6.innerHTML="该手机号已被占用";}else{s6.innerHTML="该手机号可以注册";}
 				}
 			};
-			xhr.open('get','user/v1/check/'+$phone,true);
+			xhr.open('get','http://127.0.0.1:8080/user/v1/check/'+$phone,true);
 			xhr.send();
 		}
 		function userreg(){
@@ -66,7 +67,7 @@
 						if(result=="1"){alert('注册成功');return;}else if(result=="0"){alert('注册失败');return;}
 					}
 				};
-				xhr.open('post','/user/v1/regphone',true);
+				xhr.open('post','http://127.0.0.1:8080/user/v1/regphone',true);
 				xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 				var formdata="phone="+$phone+"&upwd="+$upwd+"&city="+$c;
 				xhr.send(formdata);
@@ -166,7 +167,7 @@
  		<div id="d2"><img src="reg3000.jpg" alt="">
 	</div>
 	</div>
-	<iframe src="footer.html " frameborder="0" scrolling="no" width="100%" height="700px"></iframe>
+	<footer id="footer"></footer>
 	</div>
 </body>
 </html>

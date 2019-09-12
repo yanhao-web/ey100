@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="city.css">
+</head>
+<body>
+    <header id="demo"></header>
+        <div id="app">
+            <ul class="navbread">
+                <li><a href="">首页</a></li>
+                <li><a href="">办公文具</a></li>
+                <li><a href="">文件夹类</a></li>
+            </ul>
+            <div class="fl">
+                <div>
+                    <a href="" class="wjj">文件夹类(1335)</a>
+                </div>
+                <table class="sq" cellspacing="10px">
+                    <tr class="active">
+                        <td><a href=""><div>吊挂快捞及相关</div><div>(49件) </div></a></td>
+                        <td><a href=""><div>文件盒/档案盒</div><div>(109件) </div></a></td>
+                        <td><a href=""><div>文件袋/档案袋</div><div>(159件) </div></a></td>
+                        <td><a href=""><div>文件保护套</div><div>(83件) </div></a></td>
+                        <td><a href=""><div>分类索引页</div><div>(39件) </div></a></td>
+                        <td><a href=""><div>装订/整理夹</div><div>(71件) </div></a></td>
+                    </tr>
+                    <tr class="active">
+                        <td><a href=""><div>强力夹/轻便夹</div><div>(130件) </div></a></td>
+                        <td><a href=""><div>资料册/相册</div><div>(299件) </div></a></td>
+                        <td><a href=""><div>档案夹</div><div>(65件) </div></a></td>
+                        <td><a href=""><div>抽杆夹/拉杆夹</div><div>(41件) </div></a></td>
+                        <td><a href=""><div>环状文件夹</div><div>(64件) </div></a></td>
+                        <td><a href=""><div>名片册/名片盒</div><div>(87件) </div></a></td>
+                    </tr>
+                    <tr class="dnone" id="adn">
+                        <td><a href=""><div>开管文件夹</div><div>(19件) </div></a></td>
+                        <td><a href=""><div>板夹</div><div>(47件) </div></a></td>
+                        <td><a href=""><div>装订夹条</div><div>(8件) </div></a></td>
+                        <td><a href=""><div>文件包/风琴包</div><div>(65件) </div></a></td>
+                    </tr>
+                </table>
+                <div>
+                    <button class="shang" @click="add">更多</button>
+                </div>
+            </div>
+            <div class="fl fr">
+                <div class="pai"><span>品牌:</span></div>
+                <div class="pcen">
+                    <div class="pcen1">
+                            <a href="javascript:;" class="pinp">不限</a>
+                            <a class="pinp p0" href="javascript:;" v-for="(p,n) of pin" :key="n">{{p}}</a>
+                    </div> 
+                    <div class="confirm">
+                        <button @click="sure">确定</button>
+                        <button @click="qx">取消</button>
+                    </div>
+                </div>
+                <div><button class="shang bu" @click="bux"><span>+</span>不限</button></div>
+                
+            </div>
+            <div class="zlist">
+                <div class="zleft">
+                    <div class="zleft1">
+                        <div class="title">
+                            销量排行
+                        </div>
+                        <div class="elem" v-for="(elem,j) of list" :key="j">
+                            <div>
+                                <img :src="elem.pimg" alt="">
+                            </div>
+                            <div class="mtop">
+                                <div>
+                                    {{elem.pname}}
+                                </div>
+                                <div class="redp">
+                                    ￥{{elem.price}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zleft2">
+                        <div class="title">
+                            最新上架
+                        </div>
+                        <div class="elem" v-for="(elem,j) of list" :key="j">
+                            <div>
+                                <img :src="elem.pimg" alt="">
+                            </div>
+                            <div class="mtop">
+                                <div>
+                                    {{elem.pname}}
+                                </div>
+                                <div class="redp">
+                                    ￥{{elem.price}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zleft3">
+                        <div class="title">
+                            最低价格
+                        </div>
+                        <div class="elem" v-for="(elem,j) of list" :key="j">
+                            <div>
+                                <img :src="elem.pimg" alt="">
+                            </div>
+                            <div class="mtop">
+                                <div>
+                                    {{elem.pname}}
+                                </div>
+                                <div class="redp">
+                                    ￥{{elem.price}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zleft4">
+                        <div class="title">
+                            <div>最近浏览过的</div>
+                            <div><a href="">清除记录</a></div>
+                        </div>
+                        <div class="elem" v-for="(elem,j) of list" :key="j">
+                            <div>
+                                <img :src="elem.pimg" alt="">
+                            </div>
+                            <div class="mtop">
+                                <div>
+                                    {{elem.pname}}
+                                </div>
+                                <div class="redp">
+                                    ￥{{elem.price}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zright">
+                    <div class="qt">
+                        <div class="dt">
+                            <img @click="list1" src="sort_on.gif" alt="">
+                            <img @click="list0" src="sort_list_off.gif" alt="">
+                        </div>
+                        <div class="sx">
+                            <div @click="pnoc(-1,$event)">
+                                <img src="sort_list_f.gif" alt="">
+                                <a href="javascript:;">上一页</a>
+                            </div>
+                            <div>{{pno}}/{{ps}}</div> 
+                            <div @click="pnoc(1,$event)">
+                                <a href="javascript:;">下一页</a>
+                                <img src="sort_list_n.gif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="head2">
+                        <div>
+                            <city></city>
+                        </div>
+                        <div class="btn">
+                            排序：<button>默认</button>|<button>销量</button>|<button>上架时间</button>|<button>价格</button>
+                        </div>
+                        <div class="btnr" @click="couc">
+                                共1336个商品, 每页显示：
+                                <button>8</button>
+                                <button>12</button>
+                                <button>16</button>
+                        </div>
+                    </div> 
+                    <div class="list" id="list"> 
+                        <div class="item" v-for="(item,i) of list" :key="i">
+                            <div class="img"><img  :src="item.pimg"  object-fit="cover"
+                                alt=""></div>
+                            <div class="pname">{{item.pname}}</div>
+                            <div>商品编号：{{item.pid}}</div>
+                            <div>￥{{item.price}}</div>
+                            <div class="gsb">
+                                <button @click="change(-1,$event)">-</button>
+                                <input type="text" value="1">
+                                <button @click="change(1,$event)">+</button> 
+                                <button class="gm" @click="addcart" :data-pid="item.pid" :data-pname="item.pname" :data-price="item.price" :data-pimg="item.pimg" >购买</button>
+                                <a class="sc" href="">收藏</a>  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div>
+                        <div class="sx">
+                            <div>
+                                <img src="sort_list_f.gif" alt="">
+                                <a href="">上一页</a>
+                            </div>
+                            <div  class="btnr" v-for="(num,i) of pnos">
+                                <button>    
+                                    {{num}}
+                                </button>
+                            </div> 
+                            <div>
+                                <a href="">下一页</a>
+                                <img src="sort_list_n.gif" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+                </div>    
+            </div>
+        </div>
+        <footer id="footer"></footer>
+        <script src="jquery-1.11.3.js"></script>
+        <script src="vue.js"></script>
+        <script src="vue-router.js"></script>
+        <script src="header.js"></script>
+        <script src="footer.js"></script>
+        <script src="city.js"></script>
+        <script src="jquery-1.11.3.js"></script>
+        <script src="ajax.js"></script>
+        <script></script>
+        <script>
+          var vm=new Vue({
+              el:"#app",
+              data:{
+                      list:[],
+                      pno:1,
+                      pnos:[1,2,3,4,5,6,7,8,9,10,11,12,13],
+                      count:8,
+                      uid:1,
+                      ps:6,
+                      pid:"",
+                      pname:'',
+                      price:'',
+                      pimg:'',
+                      a:{addcart:this.addcart},
+                      ischeck:false,
+                      pin:["时代良品","易优百","国誉","北京","驰辉","创奇艺","得力","东迅","达伯埃","易达","益而高","富得快","富美高","国产","吉丽","金得利","金辉","杰丽斯","锦宫","Kaunet","可得优","普乐士","齐心","QIXIN","启达","树德","思域","手牌","远生","文渊","喜利","元昌","钊盛","卓联"]
+                    },
+              methods:{  
+                  addcart(e){
+                      this.pid=e.target.dataset.pid;
+                      this.pname=e.target.dataset.pname;
+                      this.price=e.target.dataset.price;
+                      this.pimg=e.target.dataset.pimg;
+                      localStorage.setItem("uid",1);
+                      this.uid=localStorage.getItem("uid");
+                      //设置属性发送ajax请求保存session信息
+                      return new Promise((resolve)=>{
+                            var xhr=new XMLHttpRequest();
+                            xhr.onreadystatechange=function(){
+                                if(xhr.readyState==4&&xhr.status==200){
+                                    var result=xhr.responseText;
+                                    resolve(result);
+                                }
+                            };  
+                            xhr.open("get","http://127.0.0.1:8080/product/addcart?pid="+this.pid+"&pname="+this.pname+"&price="+this.price+"&pimg="+this.pimg+"&ischecked="+0+"&uid="+this.uid,true);  
+                            xhr.send();  
+                        }).then(res=>{    
+                        });
+                  },
+                  sure(e){
+                      var div=e.target.parentNode.parentNode.parentNode;
+                      div.style.height="3rem";
+                      var arr=[];
+                      var as=document.querySelectorAll(".pinp.p0");
+                      var pcen=document.querySelector(".pcen");
+                      for(var d of as){
+                          var i=d.previousElementSibling;
+                          if(i.ischeck){
+                              arr.push(d.innerHTML);
+                          }
+                      }
+                      var arr0=[];
+                      for(var a of arr){
+                          var b=document.createElement("span");
+                          b.innerHTML=a;
+                          arr0.push(b);
+                      }
+                      //console.log(arr0);
+                      pcen.innerHTML="";
+                      for(var ar of arr0){
+                          ar.className="ar0";
+                          pcen.appendChild(ar);
+                      }
+                      var btn=document.createElement("button");
+                      btn.innerHTML="清空筛选";
+                      btn.className="shai";
+                      pcen.appendChild(btn);
+                      btn.addEventListener("click",()=>{
+                          history.go(0);
+                      });
+                  },
+                  qx(e){
+                      var div=e.target.parentNode.parentNode.parentNode;
+                      div.style.height="3rem";
+                      var che=document.querySelectorAll(".pinp.p0");
+                      for(var c of che){
+                          var i=c.previousElementSibling;
+                          i.remove(); 
+                      }
+                      var sb=document.querySelector(".shang.bu");
+                      sb.parentNode.style.display="block";
+                  },
+                  bux(e){
+                      var div=e.target.parentNode.parentNode;
+                      div.style.height="12rem";
+                      e.target.parentNode.style.display="none";
+                      var p0=document.querySelectorAll(".p0");
+                      var k=0;
+                      for(var p of p0){
+                          k++;
+                          var che=document.createElement("input");
+                          che.type="checkbox";
+                          che["v-model"]="ischeck";
+                          che.addEventListener("click",function(){
+                              this.ischeck=true;
+                          });
+                          che.style.marginTop="1.1rem";
+                          che.style.marginRight=".6rem";
+                          var p1=p.parentNode;
+                          p1.insertBefore(che,p); 
+                          if(k==11){
+                              che.style.marginLeft="5rem";
+                          } 
+                      }
+                    },
+                  list1(e){
+                      var list=document.getElementById("list");
+                      list.className="list";
+                      e.target.src="sort_on.gif";
+                      e.target.nextElementSibling.src="sort_list_off.gif";
+                  },
+                  list0(e){
+                      var list=document.getElementById("list");
+                      list.className="list0";
+                      e.target.src="sort_list_on.gif";
+                      e.target.previousElementSibling.src="sort_off.gif";
+                  },
+                  pnoc(n,e){
+                      var p=this.pno;
+                        this.pno+=n;
+                        if(n==1){
+                             if(p>=this.ps){
+                                this.pno=this.ps;
+                            }
+                        }
+                        if(n==-1){
+                             if(p<=1){
+                                this.pno=1;
+                            }
+                        }
+                        this.load();
+                  },
+                  couc(e){
+                    if(e.target.nodeName=="BUTTON"){
+                        this.count=parseInt(e.target.innerHTML);
+                        this.load();
+                        if(e.target.innerHTML=="8"){
+                            this.ps=6;
+                            this.pno=1;
+                        }
+                        if(e.target.innerHTML=="16"){
+                            this.ps=3;
+                            this.pno=1;
+                        }else if(e.target.innerHTML=="12"){
+                            this.ps=4;
+                            this.pno=1;
+                        }
+                    }
+                  },
+                  change(n,e){
+                      if(n==1){
+                        var b1=e.target.previousElementSibling;
+                        var bv=parseInt(b1.value);
+                        b1.value=bv+parseInt(n);
+                      }else if(n==-1){
+                        var b0=e.target.nextElementSibling;
+                        var bv0=parseInt(b0.value);
+                        b0.value=bv0+parseInt(n);
+                        if(bv0<2){
+                            b0.value=1;
+                        }
+                      }
+                  },
+                  add(e){
+                      var btn=e.target;
+                      var table=btn.parentNode.previousElementSibling;
+                      var ad=table.children[0].children[2];
+                      if(btn.innerHTML=="更多"){
+                        ad.className="active";
+                        e.target.innerHTML="收起";
+                        table.parentNode.style.height="13rem";
+                      }else if(btn.innerHTML=="收起"){
+                        ad.className="dnone";
+                        e.target.innerHTML="更多";
+                        table.parentNode.style.height="9rem";
+                      }
+                    
+                  },
+                  load(){
+                      return new Promise((resolve)=>{
+                        var xhr=new XMLHttpRequest();
+                        xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4&&xhr.status==200){
+                                var result=xhr.responseText;
+                                var res=JSON.parse(result);
+                                resolve(this.list=res.data);
+                            }
+                        };
+                        xhr.open("get","http://127.0.0.1:8080/product/list"+"?pno="+this.pno+"&count="+this.count,true);
+                        xhr.send();
+                      }).then(res=>{this.list=res}); 
+                  }
+                  
+                  ,
+              },
+              created(){
+                  this.load();
+            }
+          });
+        </script> 
+</body>
+</html>
+    

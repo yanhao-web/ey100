@@ -1,0 +1,430 @@
+#app{
+    width:70%;
+    margin:auto;
+    font-size:.6rem;
+}
+.navbread{
+    display:flex;
+}
+.navbread a:hover{
+    text-decoration:underline;
+}
+.fl{
+    border:1px solid lightgray;
+    width:90%;
+    height:10rem;
+    background: #efefef;
+    margin-top:1.5rem;
+    display:flex;
+    justify-content: space-between;
+}
+.navbread li:not(:first-child):before{
+    content:">"
+}
+.fl .sq td{
+    border:1px solid lightgray;
+    background:#fff;
+    padding:.3rem .8rem;
+}
+.fl .sq td:hover{
+    border-color:red;
+}
+.fl .shang{
+    background-color:#fff;
+    display:flex;
+    border:1px solid orange;
+}
+.fl .shang div{
+    background:url(more.png) no-repeat;
+    background-position: 0px 0px;
+    width:1.5rem;
+    height:1rem;
+
+}
+.fl .sq td a{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zlist .zright{
+    width:70%;
+}
+.list{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:100%;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+.list .item{
+    width:25%;
+    border:1px solid #ddd;
+    border-right:0;
+    border-bottom:0;
+    box-sizing: border-box;
+}
+.list .item .img{
+    border:1px solid #ddd;
+    margin:1.2rem;
+    width:180px;
+    height:180px;
+}
+.list .item div{
+    margin-left:1.2rem;
+    width:180px;
+    padding:.2rem;
+}
+.list .item div:nth-child(4){
+    font-size:.8rem;
+    color:red;
+}
+.list .item .img img{
+    width:180px;
+    height:180px;
+}
+.list .item .pname{
+    height:2rem;
+}
+.list .item .gsb{
+    display:flex;
+}
+.list .item .gsb input{
+    width:1rem;
+    text-align: center;
+    height:1rem;
+}
+.list .item .gsb button{
+    background:#fff;
+    border:1px solid #ddd;
+    margin:0 .3rem;
+    width:1rem;
+    height:1rem;
+}
+.list .item .gsb .gm{
+    width:4rem;
+    font-size:.5rem;
+    height:1.3rem;
+    background:red;
+    color:#fff;
+}
+.list .item .gsb .gm:hover{
+    background: orange;
+}
+.list .item .gsb a{
+    width:2rem;
+}
+.list .item .gsb a:hover{
+    text-decoration: underline;
+}
+.list .item input:focus,
+.zlist button:focus{
+    outline:0;
+}
+.zlist{
+    display:flex;
+    margin-top:2rem;
+}
+.zlist .zright .qt{
+    display:flex;
+    justify-content: space-between;
+}
+.zlist .zright .head2{
+    background:#ddd;
+    display:flex;
+    flex-wrap: nowrap;
+    height:2.5rem;
+    line-height: 2.5rem;
+    justify-content: space-between;
+    line-height: 2.5rem;
+}
+.zlist .zright .head2 .btn{
+    margin-left:0rem;
+}
+.zlist .zright .head2 .btn button,.zlist .zright .btnr button{
+    background: #fff;
+    border:2px solid #ddd;
+    padding:.2rem .5rem;
+    margin:0 .5rem;
+}
+.zlist .zright .head2 .btn button:hover{
+    color:red;
+}
+.zlist .zright .head2 .btn button:focus{
+    color:red;
+    border-color:red;
+}
+.zlist .zright .btnr button:focus{
+    color:#fff;
+    background:orange;
+}
+div.ct{
+    margin-top:0rem;
+}
+div.ct .ps{
+    margin-top:.5rem;
+    background: #fff;
+}
+.zlist .zright  .sx{
+    display:flex;
+}
+.zlist .zright  .sx div{
+    margin:0 .3rem;
+}
+.zlist .zright .sx img:first-child{
+    margin-right:1rem;
+}
+.zlist .zright .sx img:last-child{
+    margin-left:1rem;
+}
+.zlist .zleft{
+    width:20%;
+}
+.zlist .zleft .zleft4{
+    height:27.25rem;
+}
+.zlist .zleft .zleft4 .title{
+    display:flex;
+    justify-content: space-between;
+}
+.zlist a:hover{
+    text-decoration: underline;
+}
+.zlist .zleft>div{
+    width:100%;
+    height:14.5rem;
+    overflow:hidden;
+}
+.zlist .zleft>div~div{
+    margin-top:1rem;
+}
+.zlist .zleft img{
+    width:4rem;
+    height:4rem;
+}
+.zlist .zleft .elem{
+    display:flex;
+    width:90%;
+    border:1px solid #ddd;
+    box-sizing: border-box;
+    border-top:0;
+}
+.zlist .zleft .elem .redp{
+    color:red;
+}
+.zlist .zleft .elem .mtop div{
+    margin-top:.5rem;
+}
+.zlist .zleft .title{
+    border:1px solid #ccc;
+    background:#ddd;
+    box-sizing: border-box;
+    width:90%;
+    padding:.3rem .5rem;
+}
+#footer{
+    margin-top:-17rem;
+}
+.fl .wjj{
+    color:red;
+}
+.fl .wjj:hover{
+    text-decoration: underline;
+}
+.fl .sq .dnone{
+    display:none;
+}
+.fl .sq .active{
+    display:block;
+}
+.fl{
+    position:relative;
+}
+.fl .wjj{
+    position:absolute;
+    top:2rem;
+    left:1rem;
+}
+.fl .shang{
+    position:absolute;
+    top:2rem;
+    right:1rem;
+}
+.fl .shang:focus{
+    outline:0;
+}
+.fl.fr{
+    background: #fff;
+}
+.fl.fr .shang{
+    top:.6rem;
+}
+.fl.fr .pai{
+    background:#ddd;
+    width:9rem;
+    position: relative;
+}
+.fl.fr .pai span{
+    position: absolute;
+    top:.8rem;
+    left:5rem;
+}
+.fl.fr .pcen{
+    width:80%;
+    margin-right:3rem;
+    margin-left:2rem;
+}
+.fl.fr .pcen .pcen1 {
+    display:flex;
+    flex-wrap: wrap;
+}
+.fl.fr .pcen .pcen1 a{
+    width:4rem;
+    margin-top:1rem;
+}
+.fl.fr .shang.bu{
+    border-color:#ddd;
+    padding:.3rem 1rem;
+}
+.fl.fr .pcen a:first-child{
+    color:red;
+}
+.fl.fr .pcen .confirm{
+    background: #eee;
+    height:3rem;
+    width:110.3%;
+    margin-top:1rem;
+    margin-left:-3.2rem;
+    display:flex;
+    justify-content: center;
+}
+.fl.fr .pcen .confirm button{
+    height:1.5rem;
+    margin-top:.8rem;
+    margin-right:2rem;
+    padding:1px .8rem !important;
+    font-size:5px;
+    border:1px solid #ccc;
+    outline:0;
+    border-radius:3px;
+}
+.fl.fr .pcen .confirm button:first-child{
+    background: red;
+    color:#fff;
+    border-color:red;
+}
+.fl.fr .pcen .confirm button:last-child{
+    background: #fff;
+    color:#000;
+}
+.list0{
+    display:block;
+    border:.01rem solid #ccc;
+    box-sizing: border-box;
+}
+.list0 .item{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width:58rem;
+    border-bottom:.1rem dotted #ccc;
+    margin-left:.1rem;
+}
+.list0 .item .img{
+    border:.01rem solid #ddd;
+    margin:.4rem;
+    width:5.5rem;
+}
+.list0 .item .img img{
+    width:4.5rem;
+    margin:.1rem .5rem;
+}
+.list0 .item div{
+    margin-right:5rem;
+    width:5rem;
+}
+.list0 .item div:nth-child(2){
+    width:10rem;
+    margin-left:3rem;
+    margin-right:1rem;
+}
+.list0 .item div:nth-child(3){
+    width:7rem;
+    margin-left:3rem;
+}
+.list0 .item div:first-child{
+    margin-right:-2rem;
+}
+.list0 .item div~div{
+    margin-top:2rem;
+}
+.list0 .item .gsb{
+    display:flex;
+    height:1.5rem;
+    width:20rem;
+    margin-right:1rem;
+}
+.list0 .item .gsb input{
+    width:1.5rem;
+    text-align: center;
+}
+.list0 .item .gsb .gm,.list0 .item .gsb .sc{
+    margin-left:4.5rem;
+    padding:.4rem;
+    width:5rem;
+    height:1.8rem;
+    display:block;
+    font-size:.1rem;
+    background: red;
+    color:#fff;
+    border:0;
+}
+.list0 .item .gsb .gm:hover{
+    background: orange;
+}
+.list0 .item .gsb .sc{
+    margin-left:2rem;
+    height:1rem;
+    text-align: center;
+    color:#000;
+    background: #dedede;
+}
+.list0 .item .gsb .sc:hover{
+    background:#444;
+}
+.list0 .item .pname{
+    text-decoration: underline;
+    color:#000;    
+}
+.list0 .item .pname:hover{
+    cursor: pointer;
+    color:red;
+}
+.fl.fr {
+    height:3rem;
+    overflow: hidden;
+}
+.fl.fr .shang.bu span{
+    font-size:1.2rem;
+    margin-top:-.1rem;
+}
+.fl.fr .shang.bu{
+    color:#aaa;
+}
+.fl.fr .pcen .pcen1 .p0{
+    color:#000;
+}
+.fl.fr .pcen .shai{
+    background: #fff;
+    border:1px solid #ddd;
+    outline:0;
+    padding:.2rem .5rem;
+    float:right;
+    margin-top:.7rem;
+    margin-right:-1rem;
+}
+.fl.fr .pcen .ar0{ 
+    color:red;
+    position: relative;
+    top:.7rem;
+}

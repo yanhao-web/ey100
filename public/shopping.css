@@ -1,0 +1,169 @@
+.gwmk{
+    width:55%;
+    margin:0 auto;
+    margin-bottom:-30rem;
+}
+.timg{
+    margin-left:50%;
+}
+.zd{
+    display:flex;
+    justify-content: space-between;
+}
+.zd2{
+    margin-right:6rem;
+}
+.gwmk div,.gwmk>p{
+    color:#000;
+    font-size:.7rem;
+}
+.gwmk .tab{
+    width:100%;
+    font-size:.7rem;
+    color:#000;
+    table-layout: auto;
+}
+.gwmk .tab tr td{
+    padding:.2rem 1rem !important;
+}
+.gwmk .tab>tbody>tr:nth-child(2n) td,.gwmk .tab thead td{
+    background: #F5F5F5;
+    border-top:.1rem solid #dfdfdf;  
+    border-bottom:.1rem solid #dfdfdf; 
+} 
+.gwmk .tab tfoot tr td,.gwmk>p{
+    padding:.6rem;
+    border-bottom:.1rem dotted #dfdfdf;
+}
+.gwmk>.p1{
+    margin-top:2rem;
+    font-size:1rem;
+    border-top:.1rem dotted #dfdfdf;
+}
+.gwmk>p{
+    text-align: right;
+}
+.gwmk span{
+    color:red;
+    font-size:1rem;
+}
+.gwmk .butt{
+    display:flex;
+    padding-top:2rem;
+    justify-content: flex-end;
+
+}
+.gwmk .butt button:first-child{
+    padding:0.2rem;
+    margin-right:1rem;
+    height:1.8rem;
+    margin-top: .8rem;
+}
+.gwmk .butt button:last-child{
+    background: red;
+    color:#fff;
+    padding:.2rem 1rem;
+    font-size:1.4rem;
+    border:0;
+}
+.gwmk .r2{
+    display: flex;
+    justify-content:space-around;
+}
+.gwmk .c6{
+    display:flex;
+    flex-direction: column;
+    width:12%;
+    margin-top:1rem;
+}
+.gwmk .tj{
+    background: #F5F5F5;
+    border-top:.07rem solid #dfdfdf;
+    display: flex;
+}
+.gwmk .tj div{
+    width:86%;
+    height:2rem;
+    border-bottom:.07rem solid red;
+}
+.gwmk .tj span{
+    background: #fff;
+    font-size:.7rem;
+    border:.07rem solid red;
+    border-bottom:0;
+    padding:.5rem 3rem;
+}
+.gwmk .c6 img{
+    height:50%;
+    border:.07rem solid #dfdfdf;
+}
+.gwmk .c6 button{
+    width:70%;
+    background: #fff;
+    border:.09rem solid #dfdfdf;
+}
+.gwmk .c6 div{
+    margin-top:1.8rem;
+    color:red;
+}
+.gwmk .zj{
+    border:.07rem solid #dfdfdf;
+    width:100%;
+    height:100%;
+}
+.btn2{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:1.7rem;
+}
+.gwmk .btn2 button{
+    background: #fff;
+    border:0;
+    border:.07rem solid #dfdfdf;
+    padding:.4rem .3rem;
+    margin-right:.5rem;
+}
+.gwmk .btn2 button.in{
+    background: red;
+}
+.gwmk .btn2 button:hover{
+    background: red;
+}
+.gwmk .pb{
+    margin-top:2rem;
+}
+.gwmk .pb a{
+    text-decoration: underline;
+    color:red;
+}
+.tab .red{
+    color:red;
+}
+.tab .btn button{
+    border:0;
+    background: #fff;
+}
+.tab .btn button:focus{
+    outline:0;
+}
+.tab .btn button:hover{
+    cursor: pointer;
+    color:red;
+    text-decoration: underline;
+}
+.tab .pimg img{
+    width:3rem;
+    height:3rem;
+}
+.tab .count input{
+    width:1rem;
+    text-align: center;
+}
+.tab .count button{
+    width:1rem;
+    background: #fff;
+    border:1px solid #ddd;
+}
+.tab .count button:focus{
+    outline:0;
+}
