@@ -167,3 +167,11 @@
 .tab .count button:focus{
     outline:0;
 }
+tfoot .delitems{
+    border:0;
+    background: #fff;
+}
+tfoot .delitems:hover{
+    text-decoration: underline;
+    color:red;
+}

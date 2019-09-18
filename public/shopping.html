@@ -39,16 +39,16 @@
                         <td>操作</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="ym">
                     <tr v-for="(item,i) of list" :key="i">
-                        <td><input type="checkbox" v-model="item.ischecked" :data-ischecked="item.ischecked" @click="check"></td>
+                        <td><input type="checkbox" v-model="item.ischecked" :data-ischecked="item.ischecked" @click="check" :data-pid="item.pid"></td>
                         <td class="pimg"><img :src="item.pimg" alt=""></td>
                         <td>{{item.pname}}</td>
                         <td>{{item.pid}}</td>
                         <td class="red">￥{{item.price}}</td>
                         <td class="count">
                             <button @click="change(-1,$event)" :data-pid="item.pid" :data-pname="item.pname" :data-price="item.price" :data-pimg="item.pimg" :data-id="item.id">-</button>
-                            <input type="text" v-model="item.count">
+                            <input type="text" v-model="item.count" class="input">
                             <button @click="change(1,$event)"  :data-pid="item.pid" :data-pname="item.pname" :data-price="item.price" :data-pimg="item.pimg" :data-id="item.id">+</button>
                         </td>
                         <td class="red" class="xj" :data-pid="item.pid" :data-pname="item.pname" :data-price="item.price" :data-pimg="item.pimg" :data-id="item.id" >￥{{item.price*item.count}}</td>
@@ -58,14 +58,14 @@
                 <tfoot>
                     <tr>
                         <td><input type="checkbox" @click="all" v-model="ischecked">全选</td>
-                        <td><a href="">批量删除</a></td>
+                        <td><button class="delitems" @click="delitems">批量删除</button></td>
                         <td colspan="5"><a href="">下载</a></td>
                         <td>商品金额总计：<span>￥{{total}}</span></td>
                     </tr>
                 </tfoot>
             </table>
-            <p class="p1">您还需购买<span> ¥318.50</span>，获取积分比例将增加3.3倍！</p>
-            <p><span>2</span> 种  商品已选择总数：<span>2</span> 件   购物车里有商品：</p>
+            <p class="p1"><span></span></p>
+            <p>购物车里有商品：<span>{{zh}}</span> 种  商品已选择总数：<span>{{sel}}</span> 件   </p>
             <p>商品金额总计：<span>¥{{total}}</span></p> 
             <div class="butt">
                 <button>&lt;继续购物</button>
@@ -140,7 +140,6 @@
             data:{
                 list:[],
                 uid:1,
-                total:0,
                 count:8,
                 uid:1,
                 ps:6,
@@ -149,21 +148,84 @@
                 price:'',
                 pimg:'',
                 ischecked:false,
+                checked:false,
             },
             methods:{
-                all(){
-                    this.ischecked=!this.ischecked;
-                    for(var x of this.list){
-                        if(this.ischecked){
-                            x.ischecked=true;
-                        }else if(!this.ischecked){
-                            x.ischecked=false;
+                delitems(){
+                    var id="";
+                    var id1;
+                    for(var i=0;i<this.list.length;i++){
+                        var isc=this.list[i].ischecked;
+                        if(isc==1){
+                            id+=this.list[i].id+",";
                         }
                     }
+                    id1=id.slice(0,-1);
+                    localStorage.setItem("uid",1);
+                    this.uid=localStorage.getItem("uid");
+                    return new  Promise((resolve)=>{
+                        var xhr=new XMLHttpRequest();
+                        xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4&&xhr.status==200){
+                                var result=xhr.responseText;
+                                //console.log(result);
+                                resolve(result);
+                            }
+                        };
+                        xhr.open("get","http://127.0.0.1:8080/product/delitems?uid="+this.uid+"&id="+id1,true);
+                        xhr.send();
+                    }).then(res=>{
+                        this.cart();
+                    });
+                },
+                all(){
+                    this.ischecked=!this.ischecked;
+                      localStorage.setItem("uid",1);
+                      this.uid=localStorage.getItem("uid");
+                      var c="";
+                      var p="";
+                      var id="";
+                        for(var i=0;i<this.list.length;i++){
+                            if(this.ischecked==true){
+                                this.list[i].ischecked=true;
+                                this.list[i].ischecked=1;
+                                this.pid=this.list[i].pid;
+                                this.id=this.list[i].id;
+                                c=this.list[i].ischecked;
+                                p+=this.pid+",";
+                                id+=this.id+",";
+                            }else if(this.ischecked==false){
+                                this.list[i].ischecked=false;
+                                this.list[i].ischecked=0;
+                                this.pid=this.list[i].pid;
+                                this.id=this.list[i].id;
+                                c=this.list[i].ischecked;
+                                p+=this.pid+",";
+                                id+=this.id+",";
+                            }
+                        }
+                            var p1;
+                            p1=p.slice(0,-1);
+                            var id1;
+                            id1=id.slice(0,-1);
+                        return new Promise((resolve)=>{
+                            var xhr=new XMLHttpRequest();
+                            xhr.onreadystatechange=function(){
+                                if(xhr.readyState==4&&xhr.status==200){
+                                    var result=xhr.responseText;
+                                    resolve(result);
+                                }
+                            };  
+                            xhr.open("get","http://127.0.0.1:8080/product/all?id="+id1+"&uid="+this.uid+"&checked="+c,true);  
+                            xhr.send();  
+                        }).then(res=>{ 
+                        });
                 },
                 check(e){
-                    //console.log(e.target.parentNode.innerHTML);
                     var c=e.target.dataset.ischecked;
+                    this.pid=e.target.dataset.pid;
+                      localStorage.setItem("uid",1);
+                      this.uid=localStorage.getItem("uid");
                     if(c==0||!c){
                         c=false;
                     }else{
@@ -173,14 +235,34 @@
                     if(!c){
                         this.ischecked=false;
                     }
+                    if(c==false){
+                        this.checked=0;
+                    }else if(c==true){
+                        this.checked=1;
+                    }
+                    return new Promise((resolve)=>{
+                            var xhr=new XMLHttpRequest();
+                            xhr.onreadystatechange=function(){
+                                if(xhr.readyState==4&&xhr.status==200){
+                                    var result=xhr.responseText;
+                                    resolve(result);
+                                }
+                            };  
+                            xhr.open("get","http://127.0.0.1:8080/product/check?pid="+this.pid+"&uid="+this.uid+"&checked="+this.checked,true);  
+                            xhr.send();  
+                        }).then(res=>{ 
+                            this.cart();
+                            for(var i=0;i<this.list.length;i++){
+                                var isc=this.list[i].ischecked;
+                                if(isc==false||isc==0){
+                                    return ;
+                                }else{
+                                    this.ischecked=true;
+                                }
+                            }
+                        });
                 },
                 change(n,e){
-                    var xj=document.querySelectorAll("tbody>tr");
-                        this.total=0;
-                    for(var x of xj){
-        
-                        this.total+=parseFloat(x.children[6].innerHTML.slice(1));
-                    }
                     this.pid=e.target.dataset.pid;
                       this.pname=e.target.dataset.pname;
                       this.price=e.target.dataset.price;
@@ -192,7 +274,6 @@
                         var i=input.value;
                         i++;
                         input.value=i; 
-                        this.cart();
                         return new Promise((resolve)=>{
                             var xhr=new XMLHttpRequest();
                             xhr.onreadystatechange=function(){
@@ -203,7 +284,8 @@
                             };  
                             xhr.open("get","http://127.0.0.1:8080/product/addcart?pid="+this.pid+"&pname="+this.pname+"&price="+this.price+"&pimg="+this.pimg+"&uid="+this.uid,true);  
                             xhr.send();  
-                        }).then(res=>{  
+                        }).then(res=>{ 
+                            this.cart();
                         });
                         this.cart();
                     }else if(n==-1){
@@ -211,24 +293,10 @@
                         var i=input.value;
                         i--;
                         input.value=i;
-                        this.cart();
                         if(i<1){
                             var id=e.target.dataset.id;
                             var tr=e.target.parentNode.parentNode;
-                            return new Promise((resolve)=>{
-                                var xhr=new XMLHttpRequest();
-                                xhr.onreadystatechange=function(){
-                                    if(xhr.readyState==4&&xhr.status==200){
-                                        var result=JSON.parse(xhr.responseText);
-                                        resolve(result);
-                                    }
-                                };
-                                xhr.open("get","http://127.0.0.1:8080/product/delitem?uid="+this.uid+"&id="+id,true);
-                                xhr.send();
-                            }).then(result=>{
-                                tr.remove();
-                            });
-                        this.cart();
+                            input.value=1;
                         }else {
                             return new Promise((resolve)=>{
                                 var xhr=new XMLHttpRequest();
@@ -240,7 +308,8 @@
                                 };  
                                 xhr.open("get","http://127.0.0.1:8080/product/less?pid="+this.pid+"&pname="+this.pname+"&price="+this.price+"&pimg="+this.pimg+"&uid="+this.uid,true);  
                                 xhr.send();  
-                            }).then(res=>{    
+                            }).then(res=>{ 
+                                this.cart();   
                             });
                             this.cart();
                         }
@@ -261,6 +330,7 @@
                         xhr.send();
                     }).then(result=>{
                         tr.remove();
+                        this.cart();
                     })
                 },
                 cart(){
@@ -276,20 +346,44 @@
                         xhr.send();
                     }).then(result=>{
                         this.list=result;
-                        for(var l of this.list){
-                            //console.log(l.ischecked);
-                            // if(l.ischecked==0){
-                            //     l.ischecked=false;
-                            // }else{
-                            //     l.ischecked=true;
-                            // }
-                        }
                     })
                 },
             },
             created(){
                 document.body.onload=this.cart;
-            }
+            },
+            computed: {
+                total(){
+                    var total;
+                    total=0;
+                    for(var i=0;i<this.list.length;i++){
+                        if(this.list[i].ischecked==true){
+                            total+=this.list[i].count*this.list[i].price;
+                        }
+                    }
+                    return total;
+                },
+                zh(){
+                    var zh;
+                    zh=0;
+                    for(var i=0;i<this.list.length;i++){
+                        zh++;
+                    }
+                    return zh;
+                },
+                sel(){
+                    var sel;
+                    sel=0;
+                    var j=0;
+                    for(var i=0;i<this.list.length;i++){
+                        if(this.list[i].ischecked){
+                            j++;
+                            sel+=this.list[i].count*1;
+                        }
+                    }
+                    return sel;
+                }
+            },
         });
     </script>
 </body>

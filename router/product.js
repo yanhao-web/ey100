@@ -57,6 +57,43 @@ router.get("/addcart",(req,res)=>{
 });
 
 
+//购物车商品选中的状态修改
+router.get("/check",(req,res)=>{
+    var pid=req.query.pid;
+    var uid=req.query.uid;
+    var checked=req.query.checked;
+    var sql=`update ey100_cart set ischecked=${checked} where uid=${uid} and pid='${pid}'`;
+    pool.query(sql,(err,result)=>{
+        if(err)throw err;
+        if(result.affectedRows>0){
+            res.send({code:1,msg:"修改成功"});
+        }else{
+            res.send({code:-1,msg:"修改失败"});
+        }
+    });
+});
+//购物车商品全选的状态
+router.get("/all",(req,res)=>{
+    //判断用户是否登录
+    var uid=req.query.uid;
+    //1.获取参数  id=1,2,3
+    var pid=req.query.pid;
+    var id=req.query.id;
+    var checked=req.query.checked;
+    //console.log(id);
+    //2.创建sql语句
+    var sql=`update ey100_cart set ischecked=${checked} where id in (${id})`;
+    //3.执行sql语句
+    pool.query(sql,(err,result)=>{
+        if(err)throw err;
+        if(result.affectedRows>0){
+            res.send({code:1,msg:"修改成功"});
+        }else{
+            res.send({code:-1,msg:"修改失败"});
+        }
+    });
+});
+
 //商品购物车减少
 router.get("/less",(req,res)=>{
     var uid=req.session.uid;
@@ -115,7 +152,7 @@ router.get('/delitems',(req,res)=>{
     var id=req.query.id;
     //console.log(id);
     //2.创建sql语句
-    var sql=`delete from xz_cart where id in (${id})`;
+    var sql=`delete from ey100_cart where id in (${id})`;
     //3.执行sql语句
     pool.query(sql,(err,result)=>{
         if(err)throw err;
